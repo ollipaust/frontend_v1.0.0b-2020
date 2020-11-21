@@ -22,6 +22,7 @@ import VantaWaves from 'components/animatedBackground/vantaWaves'
 import StartLoader from 'components/startLoader'
 
 import { neutral } from 'constants/colors'
+import { isIE } from 'react-device-detect'
 
 const Interface = ({ children, location }) => {
   const [startLoading, setStartLoading] = useState(true)
@@ -39,19 +40,21 @@ const Interface = ({ children, location }) => {
       <UnsortedStyles />
       <TransitionStyles />
 
+      {isIE ? (
+        <BrowserNotice>
+          <FormattedMessage id="messages.ieNotice" />
+        </BrowserNotice>
+      ) : null}
+
       {process.env.NODE_ENV === 'development' ? null : (
         <StartLoader
           className={startLoading === true ? 'loading' : 'loading-done'}
         />
       )}
 
-      <VantaWaves accentColor={neutral} vantaShine={250} />
+      <BodyClassName className={hasTouch ? 'has-touch page' : 'has-no-touch'} />
 
-      {hasTouch ? (
-        <BodyClassName className="has-touch page" />
-      ) : (
-        <BodyClassName className="has-no-touch" />
-      )}
+      <VantaWaves accentColor={neutral} vantaShine={250} />
 
       <TransitionsController location={location}>
         <Controller />

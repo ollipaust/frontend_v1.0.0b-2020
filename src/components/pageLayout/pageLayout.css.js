@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { accent, light, darker2, lighter, darker } from 'constants/colors'
-import { shine } from 'constants/animations'
 
 export const PageLayoutStyles = createGlobalStyle`
 body.about {
@@ -100,12 +99,6 @@ body.contact {
 `
 export const IndexLayoutStyles = createGlobalStyle`
 body.home {
-
-    [class*='HomeHeading'] {
-       span {
-        ${shine}
-       }
-    }
 
     .heroBtn1, .heroBtn2 { display: inline-flex; }
 

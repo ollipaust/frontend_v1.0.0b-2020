@@ -11,6 +11,8 @@ export const accentGradient150 =
 
 export const black = '#000000'
 export const white = '#ffffff'
+export const whiteGradient =
+  'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(255,255,255,1) 85%);'
 
 export const alter = '#FFE781'
 export const alter33 = 'rgba(255, 231, 129, 0.33)'
@@ -18,6 +20,7 @@ export const alter50 = 'rgba(255, 231, 129, 0.5)'
 export const alter66 = 'rgba(255, 231, 129, 0.66)'
 export const alter75 = 'rgba(255, 231, 129, 0.75)'
 
+export const glass = 'rgba(38,0,255,0.025)'
 export const neutral = '#8b8490'
 
 export const dark = '#373345'

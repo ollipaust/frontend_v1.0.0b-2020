@@ -4,23 +4,19 @@ import styled from 'styled-components'
 import { FormattedMessage } from 'react-intl'
 import translatorWrapper from 'components/translator/translatorWrapper'
 import { motion } from 'framer-motion'
-
-import Head from 'components/head'
 import BodyClassName from 'react-body-classname'
-import { isIE, isEdge } from 'react-device-detect'
 
 import { IndexLayoutStyles } from 'components/pageLayout/pageLayout.css'
-
 import Hero from 'components/pageLayout/hero'
 import Link from 'components/link'
 import Title from 'components/title'
-import BrowserNotice from 'components/browserNotice'
 import {
   ButtonStyled,
   HeroButtonsContainer,
   Divider,
   Indicator,
 } from 'components/elements'
+
 import { slideFade2s, slideFade3s } from 'constants/animations'
 
 const HeroButton = styled(Link).withConfig({ displayName: 'HeroButton' })`
@@ -32,14 +28,8 @@ const Index = () => (
     <IndexLayoutStyles />
     <BodyClassName className="home" />
 
-    {isEdge ? (
-      <BrowserNotice>
-        <FormattedMessage id="messages.ieNotice" />
-      </BrowserNotice>
-    ) : null}
-
     <Hero>
-      <Title as="h1" size="super" className="HomeHeading">
+      <Title as="h1" size="super">
         <FormattedMessage id="home.intro1" />
       </Title>
 

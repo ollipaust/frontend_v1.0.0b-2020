@@ -50,7 +50,7 @@ const HeroOverlay = () => {
     show: {
       opacity: 1,
       transition: {
-        delay: 1,
+        delay: 2.5,
         opacity: { ease: 'easeIn' },
         staggerChildren: 0.25,
         delayChildren: 0.25,
@@ -64,7 +64,7 @@ const HeroOverlay = () => {
       opacity: 1,
       y: '0%',
       transition: {
-        delay: 1.25,
+        delay: 3,
         opacity: { duration: 0.5 },
         y: { type: 'spring', damping: 300, stiffness: 50 },
       },
