@@ -12,6 +12,7 @@ export const accentGradient150 =
 
 export const accentDark = '#24153C'
 export const accentThree = '#580dd0'
+export const accentBlue = 'rgba(89,0,255,1)'
 export const darkest = 'hsla(255, 15%, 16%, 1)'
 export const glass = 'hsla(249, 100%, 50%, 0.025)'
 export const neutral = 'hsla(275, 5%, 54%, 1)'

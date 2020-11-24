@@ -1,10 +1,10 @@
 import React from 'react'
-import WAVES from './vanta.waves.min.js'
+import WAVES from './waves.min.js'
 import * as THREE from 'three'
 import { VantaContainer } from '../animatedBackground.css'
 import { motion } from 'framer-motion'
 
-class VantaWaves extends React.Component {
+class BackgroundWaves extends React.Component {
   constructor() {
     super()
     this.vantaElement = React.createRef()
@@ -14,7 +14,7 @@ class VantaWaves extends React.Component {
   componentDidMount() {
     const vantaElement = this.vantaElement.current
     const accentColor = this.props.accentColor
-    const vantaShine = this.props.vantaShine
+    const shineIntensity = this.props.shineIntensity
 
     if (typeof window !== undefined) {
       setTimeout(() => {
@@ -29,7 +29,7 @@ class VantaWaves extends React.Component {
           scale: 1.0,
           scaleMobile: 1.0,
           color: accentColor,
-          shininess: vantaShine,
+          shininess: shineIntensity,
           waveHeight: 10.0,
           waveSpeed: 0.5,
           zoom: 1,
@@ -48,4 +48,4 @@ class VantaWaves extends React.Component {
   }
 }
 
-export default VantaWaves
+export default BackgroundWaves

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import VantaWaves from 'components/animatedBackground/vantaWaves'
+import BackgroundWaves from 'components/animatedBackground/waves'
 import { Container, Content, Overlay } from './heading.css'
 import { light } from 'constants/colors'
 
@@ -39,11 +39,11 @@ const slideUp = {
   },
 }
 
-const PageHeading = ({ children, accentColor, vantaShine }) => {
+const PageHeading = ({ children, accentColor, shineIntensity }) => {
   return (
     <Container>
       <Content>
-        <VantaWaves accentColor={accentColor} vantaShine={vantaShine} />
+        <BackgroundWaves accentColor={accentColor} shineIntensity={shineIntensity} />
         <StyledSlider />
         {children}
       </Content>

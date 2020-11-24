@@ -18,7 +18,7 @@ import { TransitionStyles } from './transitions/transitions.css'
 
 import { TransitionsController, TransitionsView } from './transitions'
 import Div100vh from 'react-div-100vh'
-import VantaWaves from 'components/animatedBackground/vantaWaves'
+import BackgroundWaves from 'components/animatedBackground/waves'
 import StartLoader from 'components/startLoader'
 
 import { neutral } from 'constants/colors'
@@ -54,7 +54,7 @@ const Interface = ({ children, location }) => {
 
       <BodyClassName className={hasTouch ? 'has-touch page' : 'has-no-touch'} />
 
-      <VantaWaves accentColor={neutral} vantaShine={250} />
+      <BackgroundWaves accentColor={neutral} shineIntensity={250} />
 
       <TransitionsController location={location}>
         <Controller />
