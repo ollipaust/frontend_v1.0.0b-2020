@@ -94,16 +94,27 @@ body.contact {
 export const IndexLayoutStyles = createGlobalStyle`
 body.home {
     
-    .canvors {
+    .threeCanvas {
         position: absolute!important;
         top: 50%;
         left: 50%;
         width: 100%!important;
         height: 100%!important;
         transform: translateX(-50%) translateY(-50%)!important;
-        pointer-events: all!important;
+
+            > canvas {
+                pointer-events: all!important;
+            }
     }
 
+    .heroBtn1 {
+        margin-right: 2rem;
+
+        @media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
+            margin-right: 0;
+         }
+      }
+      
     .heroBtn1, .heroBtn2 { display: inline-flex; }
 
     [class*='LogoDark'] {

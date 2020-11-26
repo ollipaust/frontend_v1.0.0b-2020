@@ -86,7 +86,7 @@ function DesktopCanvas() {
         />
         <RotatingMesh
           args={[0.3, 0]}
-          position={[1, -0.85, -5]}
+          position={[1, -0.65, -5]}
           rotationSpeed={0.0075}
           color={accentThree}
         />
@@ -127,13 +127,13 @@ function MobileCanvas() {
       <group>
         <RotatingMesh
           args={[0.65, 0]}
-          position={[0.5, 1.8, 0]}
+          position={[0.5, 2.1, 0]}
           rotationSpeed={0.0099}
           color={accentThree}
         />
         <RotatingMesh
           args={[0.2, 0]}
-          position={[1.75, 0.1, 0]}
+          position={[1.75, -0.1, 0]}
           rotationSpeed={0.0075}
           color={accentThree}
         />
@@ -153,7 +153,7 @@ function TabletCanvas() {
     <Canvas
       colorManagement
       camera={{ position: [-5, 2, 10], fov: 30 }}
-      className="canvors"
+      className="threeCanvas"
     >
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />

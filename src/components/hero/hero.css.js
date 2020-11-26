@@ -14,6 +14,7 @@ export const HeroTextContainer = styled.div.withConfig({
   displayName: 'HeroTextContainer',
 })`
   position: absolute;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,6 +31,10 @@ export const HeroTextContainer = styled.div.withConfig({
     -webkit-text-stroke: 3px ${dark75};
     pointer-events: none !important;
     ${shine}
+
+    @media (max-height: 1024px) and (max-width: 768px) and (orientation: portrait) {
+      -webkit-text-stroke: 2px ${dark75};
+    }
   }
 
   h2 > span {
@@ -39,9 +44,12 @@ export const HeroTextContainer = styled.div.withConfig({
     display: block;
     margin-top: 1rem;
     margin-bottom: 2rem;
-  }
 
-  p > span {
-    margin-bottom: 1.5rem;
+    @media (max-height: 1024px) and (max-width: 768px) and (orientation: portrait) {
+      margin-top: 0.3rem;
+    }
+    @media (max-height: 568px) and (max-width: 320px) and (orientation: portrait) {
+      font-size: 1rem !important;
+    }
   }
 `

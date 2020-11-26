@@ -12,9 +12,9 @@ export const Container = styled.div.withConfig({
   z-index: 1;
   top: 0;
   left: 0;
-  width: calc(100% - 5em);
+  width: calc(100% - 5rem);
   height: 100%;
-  padding: 0 2.5em;
+  padding: 0 2.5rem;
   pointer-events: none !important;
 
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
@@ -22,13 +22,13 @@ export const Container = styled.div.withConfig({
     padding: 0 1rem;
   }
 
-  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    > div {
-      width: 100%;
-    }
+    width: 100%;
+    height: 100%;
+    padding: 0;
   }
 
   ${MEDIA.PHONE`
@@ -38,14 +38,12 @@ export const Container = styled.div.withConfig({
   `}
 `
 
-export const LogosContainer = styled.div.withConfig({
-  displayName: 'HeroOverlayLogosBox',
-})`
+export const LogosContainer = `
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 2vmax;
-  width: 50%;
 
   img {
     &.html,
@@ -65,49 +63,41 @@ export const LogosContainer = styled.div.withConfig({
     margin-right: 2rem;
     pointer-events: all;
   }
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+    justify-content: center;
+
+    a {
+      margin-right: 1rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
     margin-bottom: 0;
     a {
       margin-right: 0 !important;
     }
   }
-  ${MEDIA.PHONE`
-  width: 100%;
-
-    [class*='HeroOverlayLogosBoxMotion'] {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-    img, a {
-      margin-right: 0;
-      pointer-events: all;
-    }
-  `}
 `
 
-export const NoticeBox = styled.div.withConfig({
-  displayName: 'HeroOverlayText',
-})`
+export const NoticeBox = `
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 50%;
   margin-bottom: 2vmax;
   text-align: right;
   font-size: 0.75rem;
   color: ${neutral};
 
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+    text-align: center;
+
+  }
+
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
     font-size: 0.45rem;
-  }
-  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
-    justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 0.45rem;
-    width: 100%;
-    text-align: center;
   }
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
     margin-bottom: 0.5rem;

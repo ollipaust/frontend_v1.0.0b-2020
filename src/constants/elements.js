@@ -1,14 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import MEDIA from 'helpers/mediaTemplates'
-import {
-  accent,
-  accentGradient,
-  accentGradient150,
-  dark,
-  light,
-} from 'constants/colors'
-import { pulse } from 'constants/animations'
+import { accent, accentGradient150, dark, light } from 'constants/colors'
+import { pulseRings } from 'constants/animations'
 
 export const ButtonStyled = `
   display: inline-flex;
@@ -22,7 +15,7 @@ export const ButtonStyled = `
   border-width: 2px;
   border-style: solid;
   border-color: ${accent};
-  margin: 2vmax 0.5rem 0;
+  margin-top: 2vmax;
   padding: 15px 20px;
   overflow: hidden;
   text-decoration: none;
@@ -118,47 +111,20 @@ export const ButtonStyled = `
       transform: translateY(-50%) translateZ(0);
       transition: transform 500ms ease-in-out 0ms;
     }
-
-    .pulsing-rings {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      top: 0;
-      left: 0;
-      margin: 0 auto;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      transition: opacity 350ms ease-in-out 2.5s;
-    }
-    .pulsing-rings .pulsing-ringlet {
-      position: absolute;
-  
-      width: 250px;
-      height: 250px;
-      background: transparent;
-      border: 3px solid rgba(135, 0, 255, 0.15);
-      border-radius: 50%;
-      transform: scale(0.1, 0.1);
-      opacity: 0;
-      animation: pulse 13s ease-out infinite;
-      animation-delay: 3s;
-    }
-    .pulsing-rings .pulsing-ringlet:nth-of-type(2) {
-      animation-delay: 3.3s;
-    }
-    .pulsing-rings .pulsing-ringlet:nth-of-type(3) {
-      animation-delay: 3.6s;
-    }
-
-
-    ${pulse}
+    ${pulseRings}
 `
-export const HeroButtonsContainer = styled.span.withConfig({
-  displayName: 'HeroButtonsContainer',
-})`
-  display: block;
+
+export const HeroButtonsContainer = `
+position: relative;
+display: flex;
+flex-direction: row;
+
+
+@media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
+  flex-direction: column;
+  align-items: center;
+justify-content: center
+}
 `
 export const Divider = styled.span.withConfig({
   displayName: 'Divider',

@@ -19,6 +19,25 @@ import {
 
 import { motionStaggerButtons, ySpring } from 'constants/animations'
 
+const MotionDiv = ({ className, children }) => {
+  return (
+    <motion.div
+      variants={motionStaggerButtons}
+      initial="hidden"
+      animate="show"
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
+const StyledContainerDiv = styled(MotionDiv).withConfig({
+  displayName: 'HeroButtonsContainer',
+})`
+  ${HeroButtonsContainer}
+`
+
 const HeroButton = styled(Link).withConfig({ displayName: 'HeroButton' })`
   ${ButtonStyled}
 `
@@ -39,26 +58,20 @@ const Index = () => (
         <FormattedMessage id="home.job" />
       </Title>
 
-      <HeroButtonsContainer>
-        <motion.div
-          variants={motionStaggerButtons}
-          initial="hidden"
-          animate="show"
-        >
-          <motion.div variants={ySpring} className="heroBtn1">
-            <HeroButton to="/about">
-              <Indicator />
-              <FormattedMessage id="home.buttonStart" />
-            </HeroButton>
-          </motion.div>
-
-          <motion.div variants={ySpring} className="heroBtn2">
-            <HeroButton to="/about" className="dark">
-              <FormattedMessage id="home.buttonDownload" />
-            </HeroButton>
-          </motion.div>
+      <StyledContainerDiv>
+        <motion.div variants={ySpring} className="heroBtn1">
+          <HeroButton to="/about">
+            <Indicator />
+            <FormattedMessage id="home.buttonStart" />
+          </HeroButton>
         </motion.div>
-      </HeroButtonsContainer>
+
+        <motion.div variants={ySpring} className="heroBtn2">
+          <HeroButton to="/about" className="dark">
+            <FormattedMessage id="home.buttonDownload" />
+          </HeroButton>
+        </motion.div>
+      </StyledContainerDiv>
     </Hero>
   </React.Fragment>
 )

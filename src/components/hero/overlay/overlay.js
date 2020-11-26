@@ -12,39 +12,39 @@ import { motionStaggerLogos, slideUp2s, ySpring } from 'constants/animations'
 
 const HeroOverlay = () => {
   const MotionHeroLogosContainer = ({ className, children }) => (
-    <LogosContainer>
-      <motion.div
-        className={className}
-        variants={motionStaggerLogos}
-        initial="hidden"
-        animate="show"
-      >
-        {children}
-      </motion.div>
-    </LogosContainer>
+    <motion.div
+      className={className}
+      variants={motionStaggerLogos}
+      initial="hidden"
+      animate="show"
+    >
+      {children}
+    </motion.div>
   )
   const MotionHeroNoticeContainer = ({ className, children }) => (
-    <NoticeBox>
-      <motion.div
-        className={className}
-        variants={slideUp2s}
-        initial="hidden"
-        animate="show"
-      >
-        {children}
-      </motion.div>
-    </NoticeBox>
+    <motion.div
+      className={className}
+      variants={slideUp2s}
+      initial="hidden"
+      animate="show"
+    >
+      {children}
+    </motion.div>
   )
   const StyledMotionHeroLogosContainer = styled(
     MotionHeroLogosContainer
   ).withConfig({
     displayName: 'HeroOverlayLogosBoxMotion',
-  })``
+  })`
+    ${LogosContainer}
+  `
   const StyledMotionHeroNoticeContainer = styled(
     MotionHeroNoticeContainer
   ).withConfig({
     displayName: 'HeroOverlayTextMotion',
-  })``
+  })`
+    ${NoticeBox}
+  `
 
   return (
     <Container>

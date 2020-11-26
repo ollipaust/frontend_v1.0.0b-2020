@@ -1,7 +1,4 @@
-const shineImg = {
-  url:
-    'https://res.cloudinary.com/opco-studio/image/upload/v1606373915/shine_bugdx8.png',
-}
+import { cloudImg } from 'constants/images'
 
 export const fadeIn = {
   hidden: { opacity: 0 },
@@ -23,7 +20,7 @@ export const triangle1 = {
 export const shine = `
 
 animation: shine 1s cubic-bezier(0, 1, 1, 0.01) 3.5s;
-background: url(${shineImg.url});
+background: url(${cloudImg.shineBg});
 -webkit-background-clip: text;
 background-position-x: 100%;
 
@@ -39,7 +36,40 @@ background-position-x: 100%;
 }
 `
 
-export const pulse = `
+export const pulseRings = `
+.pulsing-rings {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 350ms ease-in-out 2.5s;
+}
+.pulsing-rings .pulsing-ringlet {
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+  background: transparent;
+  border: 3px solid rgba(135, 0, 255, 0.15);
+  border-radius: 50%;
+  transform: scale(0.1, 0.1);
+  opacity: 0;
+  animation: pulse 13s ease-out infinite;
+  animation-delay: 3s;
+}
+.pulsing-rings .pulsing-ringlet:nth-of-type(2) {
+  animation-delay: 3.3s;
+}
+.pulsing-rings .pulsing-ringlet:nth-of-type(3) {
+  animation-delay: 3.6s;
+}
+
 @keyframes pulse {
   0% {
     transform: scale(0.1, 0.1);
