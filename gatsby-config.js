@@ -8,12 +8,24 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
+    `gatsby-plugin-offline`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-eslint`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-webpack-size`,
-    `gatsby-plugin-polyfill-io`,
+    {
+      resolve: `gatsby-plugin-netlify-headers`,
+      options: {
+        headers: {
+          "/*": [
+            "Cache-Control: public, max-age=2592000, no-cache",
+            "Accept-Encoding: *",
+            "Strict-Transport-Security: max-age=2592000",
+          ],
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,18 +48,16 @@ module.exports = {
           google: [
             {
               family: "Roboto",
-              variants: ["200", "300", "400", "500", "600", "700", "800", "900"],
+              variants: ["100", "300", "400", "500"],
               fontDisplay: 'swap',
             },
           ],
         },
+        formats: ['woff2', 'woff'],
+        useMinify: true,
+        usePreload: true,
+        usePreconnect: false,
       },
-    },
-    {
-      resolve: "gatsby-plugin-anchor-links",
-      options: {
-        offset: -100
-      }
     },
   ],
 };

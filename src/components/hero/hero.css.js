@@ -33,6 +33,8 @@ export const HeroTextContainer = styled.div.withConfig({
   }
 
   h2 > span {
+    font-family: Roboto;
+    font-weight: 700;
     color: ${dark75};
     display: block;
     margin-top: 1rem;

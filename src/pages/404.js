@@ -8,10 +8,8 @@ import PageLayout from 'components/pageLayout'
 import PageContent from 'components/pageLayout/content'
 import PageContentHeading from 'components/pageLayout/content/contentHeading'
 
-
 import translatorWrapper from 'components/translator/translatorWrapper'
 import { FormattedMessage } from 'react-intl'
-
 
 const Error404 = () => (
   <PageLayout>

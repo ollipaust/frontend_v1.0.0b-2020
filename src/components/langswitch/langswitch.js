@@ -11,6 +11,7 @@ const LangButton = ({ label, locale, chosen, onClick }) => (
   <LangSwitch
     onClick={onClick}
     className={locale}
+    type="button"
     title={label}
     style={{
       opacity: chosen ? '1' : '0.177',

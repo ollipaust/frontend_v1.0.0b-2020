@@ -65,6 +65,7 @@ class Menu extends PureComponent {
             onKeyDown={this.escapeNavbar}
             aria-label="Overlay Menu"
             tabIndex="0"
+            type="button"
           >
             <MenuLines />
           </MenuButton>

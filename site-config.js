@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   siteTitle: `OPCO Studio`,
   siteTitleShort: `OP Studio`,
+  siteAuthor: `Olliver Paust`,
   siteDescription: `Personal Website, Portfolio & Blog made with GatsbyJS.`,
   siteUrl: `https://opcostudio.com`,
   themeColor: `#000`,

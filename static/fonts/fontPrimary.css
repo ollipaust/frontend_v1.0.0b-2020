@@ -1,13 +1,3 @@
-
-/* gilbert */
-@font-face {
-    font-family: 'Gilbert';
-    src: url('./Gilbert/Gilbert-Bold-Preview-5.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-}
-
 /* Campton */
 @font-face {
     font-family: 'Campton';

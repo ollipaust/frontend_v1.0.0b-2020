@@ -1,4 +1,7 @@
-import shineImg from 'images/shine.png'
+const shineImg = {
+  url:
+    'https://res.cloudinary.com/opco-studio/image/upload/v1606373915/shine_bugdx8.png',
+}
 
 export const fadeIn = {
   hidden: { opacity: 0 },
@@ -20,7 +23,7 @@ export const triangle1 = {
 export const shine = `
 
 animation: shine 1s cubic-bezier(0, 1, 1, 0.01) 3.5s;
-background: url(${shineImg});
+background: url(${shineImg.url});
 -webkit-background-clip: text;
 background-position-x: 100%;
 

@@ -4,6 +4,9 @@ const fs = require('fs');
 
 const {
   siteTitleShort,
+  siteDescription,
+  siteAuthor,
+  siteUrl,
   themeColor,
   backgroundColor,
 } = require('../site-config');
@@ -17,11 +20,11 @@ const source = 'src/images/logo.png';
 const configuration = {
   path: '/icons/',
   appName: siteTitleShort,
-  appDescription: null,
-  developerName: null,
-  developerURL: null,
+  appDescription: siteDescription,
+  developerName: siteAuthor,
+  developerURL: siteUrl,
   dir: 'auto',
-  lang: 'en-US',
+  lang: 'de-DE, en-US',
   background: backgroundColor,
   theme_color: themeColor,
   display: 'standalone',

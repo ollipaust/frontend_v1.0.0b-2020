@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import BodyClassName from 'react-body-classname'
 
 import { IndexLayoutStyles } from 'components/pageLayout/pageLayout.css'
-import Hero from 'components/pageLayout/hero'
+import Hero from 'components/hero'
 import Link from 'components/link'
 import Title from 'components/title'
 import {

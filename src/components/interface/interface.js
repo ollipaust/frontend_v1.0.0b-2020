@@ -46,13 +46,11 @@ const Interface = ({ children, location }) => {
         </BrowserNotice>
       ) : null}
 
-      {process.env.NODE_ENV === 'development' ? null : (
-        <StartLoader
-          className={startLoading === true ? 'loading' : 'loading-done'}
-        />
-      )}
-
       <BodyClassName className={hasTouch ? 'has-touch page' : 'has-no-touch'} />
+
+      <StartLoader
+        className={startLoading === true ? 'loading' : 'loading-done'}
+      />
 
       <BackgroundWaves accentColor={neutral} shineIntensity={250} />
 
