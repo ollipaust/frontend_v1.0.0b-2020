@@ -28,17 +28,7 @@ const Head = ({
     }
   }
 
-  function isLandingPage() {
-    if (pageTitle === 'Home' || pageTitle === 'Startseite') {
-      return document.body.classList.add('landing-page')
-    }
-    {
-      return document.body.classList.remove('landing-page')
-    }
-  }
-
   return (
-    <>
       <Helmet>
         <html lang={lang} />
         <meta charset="UTF-8" />
@@ -199,8 +189,6 @@ const Head = ({
           )}
         </script>
       </Helmet>
-      {isLandingPage()}
-    </>
   )
 }
 
