@@ -1,15 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { motion } from 'framer-motion'
+
 import NetlifyForm from 'react-netlify-form'
 import Link from 'components/link'
 import Title from 'components/title'
 
-import Head from 'components/head'
 import BodyClassName from 'react-body-classname'
 import PageLayout from 'components/pageLayout'
-import PageHeading from 'components/pageLayout/heading'
 import PageContent from 'components/pageLayout/content'
 import Pagination from 'components/pageLayout/pagination'
 

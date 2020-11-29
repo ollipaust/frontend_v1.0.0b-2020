@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cloudImg } from 'constants/images'
+import { cloudImg } from 'constants/cloudRes'
 
 export const LangSwitch = styled.button.withConfig({
   displayName: 'LangSwitch',

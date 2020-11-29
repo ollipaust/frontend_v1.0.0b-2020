@@ -93,7 +93,6 @@ export const NoticeBox = `
 
   @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
     text-align: center;
-
   }
 
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {

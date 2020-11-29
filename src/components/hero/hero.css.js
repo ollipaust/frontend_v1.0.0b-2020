@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import MEDIA from 'helpers/mediaTemplates'
-import { accent, light, dark, glass, dark75, black } from 'constants/colors'
+import { glass, dark75 } from 'constants/colors'
 import { shine } from 'constants/animations'
 
 export const HeroContainer = styled.section.withConfig({

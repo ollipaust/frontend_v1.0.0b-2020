@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { Location } from '@reach/router'
 import schemaGenerator from 'helpers/schemaGenerator'
-import BodyClassName from 'react-body-classname'
 
 const Head = ({
   siteTitle,
@@ -188,6 +187,7 @@ const Head = ({
             })
           )}
         </script>
+
       </Helmet>
   )
 }

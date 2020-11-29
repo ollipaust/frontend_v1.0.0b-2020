@@ -1,13 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { motion } from 'framer-motion'
 
 import Link from 'components/link'
 import Title from 'components/title'
 import Gallery from 'components/gallery'
 
-import Head from 'components/head'
 import BodyClassName from 'react-body-classname'
 import PageLayout from 'components/pageLayout'
 import PageContent from 'components/pageLayout/content'

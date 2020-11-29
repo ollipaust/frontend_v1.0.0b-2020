@@ -1,4 +1,4 @@
-import { cloudImg } from 'constants/images'
+import { cloudImg } from 'constants/cloudRes'
 
 export const fadeIn = {
   hidden: { opacity: 0 },

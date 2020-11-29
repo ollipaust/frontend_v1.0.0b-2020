@@ -4,6 +4,7 @@
   "author": "Olli Paust <ollipaust@gmail.com>",
   "scripts": {
     "develop": "gatsby develop",
+    "prod": "gatsby build && gatsby serve",
     "serve": "gatsby serve",
     "ssr": "npm run build && npm run serve",
     "format": "prettier --config ./.prettierrc --write src/**/*.js",

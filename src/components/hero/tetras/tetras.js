@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useLayoutEffect } from 'react'
 import { Canvas, useFrame } from 'react-three-fiber'
 import { accent, accentThree, accentBlue } from 'constants/colors'
 import { useSpring, a } from 'react-spring/three'
@@ -13,7 +13,7 @@ const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
   const [expand, setExpand] = useState(false)
   const [reveal, setReveal] = useState(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTimeout(() => setReveal(true), 3500)
   }, [])
 
@@ -29,7 +29,7 @@ const RotatingMesh = ({ position, args, rotationSpeed, color }) => {
       ref={mesh}
       position={position}
       scale={props.scale}
-      onLoad={useEffect(() => {
+      onLoad={useLayoutEffect(() => {
         setTimeout(() => setExpand(true), 3750)
       }, [])}
       onPointerOver={() => setExpand(false)}

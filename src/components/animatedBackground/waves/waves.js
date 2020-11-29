@@ -1,14 +1,12 @@
 import React from 'react'
-import WAVES from './waves.min.js'
+import '../../../../static/js/vantaWaves.min.js'
 import * as THREE from 'three'
 import { VantaContainer } from '../animatedBackground.css'
-import { motion } from 'framer-motion'
 
 class BackgroundWaves extends React.Component {
   constructor() {
     super()
     this.vantaElement = React.createRef()
-    this.childKey = 0
   }
 
   componentDidMount() {
@@ -40,11 +38,10 @@ class BackgroundWaves extends React.Component {
 
   componentWillUnmount() {
     if (this.effect) this.effect.destroy()
-    ++this.childKey
   }
 
   render() {
-    return <VantaContainer ref={this.vantaElement} key={this.childKey} />
+    return <VantaContainer ref={this.vantaElement} />
   }
 }
 

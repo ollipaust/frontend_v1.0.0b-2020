@@ -5,7 +5,6 @@ import { FormattedMessage } from 'react-intl'
 import Translator from 'components/interface/translator'
 import { motion } from 'framer-motion'
 import BodyClassName from 'react-body-classname'
-import { IndexLayoutStyles } from 'components/pageLayout/pageLayout.css'
 
 import Hero from 'components/hero'
 import Link from 'components/link'
@@ -44,9 +43,7 @@ const HeroButton = styled(Link).withConfig({ displayName: 'HeroButton' })`
 
 const Index = () => (
   <React.Fragment>
-    <IndexLayoutStyles />
     <BodyClassName className="home" />
-
     <Hero>
       <Title as="h1" size="super">
         <FormattedMessage id="home.name" />
