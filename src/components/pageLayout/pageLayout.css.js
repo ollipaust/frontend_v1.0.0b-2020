@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { light, dark75, dark33 } from 'constants/colors'
+import { light, dark75 } from 'constants/colors'
 
 export const PageLayoutStyles = createGlobalStyle`
 .flexbox {
@@ -31,17 +31,7 @@ body.home {
                 pointer-events: all!important;
             }
     }
-
-    .heroBtn1 {
-        margin-right: 2rem;
-
-        @media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
-            margin-right: 0;
-         }
-      }
       
-    .heroBtn1, .heroBtn2 { display: inline-flex; }
-
     [class*='LogoDark'] {
         svg {
             .a {

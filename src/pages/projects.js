@@ -5,7 +5,6 @@ import PageLayout from 'components/pageLayout'
 import Gallery from 'components/gallery'
 
 import Translator from 'components/interface/translator'
-import { FormattedMessage } from 'react-intl'
 
 const Projects = () => (
   <PageLayout prev="about" next="stack" bodyClass="projects">

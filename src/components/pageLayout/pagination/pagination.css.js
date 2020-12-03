@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, dark, dark33, light } from 'constants/colors'
+import { dark, dark33 } from 'constants/colors'
 
 export const Container = styled.section.withConfig({
   displayName: 'PaginationContainer',

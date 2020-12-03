@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'components/link'
-import { ContainerBottom } from './bottom.css'
 
 const BottomLinks = () => {
   return (

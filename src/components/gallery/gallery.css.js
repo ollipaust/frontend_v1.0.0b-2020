@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, dark33, dark75, accent50 } from 'constants/colors'
+import { dark33 } from 'constants/colors'
 
 export const Container = styled.div`
   display: flex;

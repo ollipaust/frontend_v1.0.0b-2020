@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { light33, light, accent, dark33, darkest } from 'constants/colors'
+import { light33, light } from 'constants/colors'
 
 export const Container = styled.div.withConfig({
   displayName: 'FooterContent',

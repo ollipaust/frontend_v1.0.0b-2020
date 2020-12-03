@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import { dark75 } from 'constants/colors'
 import MEDIA from 'helpers/mediaTemplates'
 

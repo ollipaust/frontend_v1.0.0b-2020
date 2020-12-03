@@ -2,11 +2,10 @@ import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import { isIE, isEdge } from 'react-device-detect'
 import { notice } from 'constants/colors'
 import { Container } from './browserNotice.css'
 
-const Div = ({ className, children, open, show }) => (
+const Div = ({ className, children }) => (
   <motion.div
     className={className}
     initial={{ y: '-105%' }}

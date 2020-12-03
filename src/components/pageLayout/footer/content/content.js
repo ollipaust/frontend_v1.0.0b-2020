@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, ContentText } from './content.css'
 import Socials from 'components/socials'
-import LogoSvg from 'components/logoSvg'
 import BottomLinks from '../bottom/bottomLinks'
 
 const Content = () => {

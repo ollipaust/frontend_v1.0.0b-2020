@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import MEDIA from 'helpers/mediaTemplates'
-import { light, accent, dark66 } from 'constants/colors'
+import { accent, dark66 } from 'constants/colors'
 
 export const ContainerWrapper = styled.section.withConfig({
   displayName: 'ContentWrapper',

@@ -1,11 +1,8 @@
 import React from 'react'
 
-import Title from 'components/title'
-
 import PageLayout from 'components/pageLayout'
 
 import Translator from 'components/interface/translator'
-import { FormattedMessage } from 'react-intl'
 import NetlifyForm from 'react-netlify-form'
 
 const Contact = () => (

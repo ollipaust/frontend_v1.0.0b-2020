@@ -11,7 +11,7 @@ function getOrientation() {
 const useScreenOrientation = () => {
   const [orientation, setOrientation] = useState(getOrientation())
 
-  const updateOrientation = event => {
+  const updateOrientation = () => {
     setOrientation(getOrientation())
   }
 

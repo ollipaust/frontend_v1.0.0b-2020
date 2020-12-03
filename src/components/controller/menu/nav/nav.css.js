@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import MEDIA from 'helpers/mediaTemplates'
 import { light, light33, alter66 } from 'constants/colors'
 
 export const Container = styled.ul.withConfig({

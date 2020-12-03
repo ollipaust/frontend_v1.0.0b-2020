@@ -1,6 +1,6 @@
 import React from 'react'
 import images from 'components/gallery/item'
-import { Container, Side, GalleryStyles } from './gallery.css'
+import { Container, GalleryStyles } from './gallery.css'
 import ImageGallery from 'react-image-gallery'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 
