@@ -203,6 +203,7 @@ export const wordsList = [
   'Elasticsearch',
   'Yarn',
   'Node.JS',
+  'JAMstack',
   'Next.JS',
   'JavaScript',
   'ES6',

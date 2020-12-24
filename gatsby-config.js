@@ -41,23 +41,5 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Roboto",
-              variants: ["100", "300", "400", "500"],
-              fontDisplay: 'swap',
-            },
-          ],
-        },
-        formats: ['woff2', 'woff'],
-        useMinify: true,
-        usePreload: true,
-        usePreconnect: true,
-      },
-    },
   ],
 };

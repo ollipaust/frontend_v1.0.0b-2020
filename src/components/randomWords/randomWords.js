@@ -14,6 +14,7 @@ const RandomWords = () => {
     'creative',
     'super-fast',
     'interactive',
+    'beautiful',
     'enjoyable',
     'animated',
     'modern',
