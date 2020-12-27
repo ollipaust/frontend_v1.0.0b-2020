@@ -4,7 +4,6 @@ import PageVisibility from 'react-page-visibility'
 import { Container } from './marqueText.css'
 import { wordsList } from 'constants/elements'
 import random from 'random-key-generator'
-import fastMount from 'react-fast-mount'
 
 const MarqueeText = ({ direction }) => {
   const [pageIsVisible, setPageIsVisible] = useState(true)
@@ -66,4 +65,4 @@ const Marquee = () => {
   )
 }
 
-export default fastMount(Marquee)
+export default Marquee

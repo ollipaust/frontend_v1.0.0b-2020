@@ -2,7 +2,6 @@ import React from 'react'
 import '../../../static/js/waves.min.js'
 import * as THREE from 'three'
 import { VantaContainer } from './animatedBackground.css'
-import fastMount from 'react-fast-mount'
 
 class BackgroundWaves extends React.Component {
   constructor() {
@@ -46,4 +45,4 @@ class BackgroundWaves extends React.Component {
   }
 }
 
-export default fastMount(BackgroundWaves)
+export default BackgroundWaves
