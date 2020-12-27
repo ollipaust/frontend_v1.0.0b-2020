@@ -27,6 +27,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://cloudinary.com', 'https://res.cloudinary.com'],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,

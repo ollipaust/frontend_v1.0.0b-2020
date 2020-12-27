@@ -93,7 +93,7 @@ const Head = ({
       />
 
       <link href="/manifest.json" rel="manifest" />
-      <link rel="preconnect">
+      
       <link
         href="/icons/apple-touch-icon-57x57.png"
         rel="apple-touch-icon"
