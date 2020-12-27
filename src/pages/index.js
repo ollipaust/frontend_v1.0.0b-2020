@@ -20,50 +20,8 @@ const Index = () => (
     <Head pageTitle="Home" />
 
     <BodyClassName className="home" />
-    <Hero>
-      <Title as="h1" size="super">
-        <motion.i
-          initial="hidden"
-          animate="show"
-          variants={heroSloganAnimation1}
-        >
-          I create
-        </motion.i>
-        <br />
-        <RandomWords />
-        <br />
-        <motion.i
-          initial="hidden"
-          animate="show"
-          variants={heroSloganAnimation2}
-        >
-          websites
-        </motion.i>
-      </Title>
-
-      <motion.div
-        className="sub-title-container"
-        initial="hidden"
-        animate="show"
-        variants={heroSubTitleAnimation}
-      >
-        <Divider />
-        <Title as="h2" size="medium">
-          Welcome to my personal Website!
-        </Title>
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        animate="show"
-        variants={heroButtonAnimation}
-      >
-        <HeroButton to="/about">
-          <Indicator />
-          Get to know me!
-        </HeroButton>
-      </motion.div>
-    </Hero>
+    
+    <p>hi</p>
   </React.Fragment>
 )
 
