@@ -1,73 +1,105 @@
 import { cloudImg } from 'constants/cloudRes'
 
-export const fadeIn = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.3, delay: 3 } },
-}
-export const fadeSlideHero1 = {
-  hidden: { opacity: 0, y: '-50%', x: '-50%' },
+export const heroSloganAnimation1 = {
+  hidden: { opacity: 0, y: '-85%', x: '-50%' },
   show: {
     opacity: 1,
     y: '-150%',
     x: '-50%',
     transition: {
-      opacity: { duration: 0.5, delay: 2 },
-      y: { duration: 0.5, delay: 2.5 },
+      opacity: { duration: 0.5, delay: 2.5 },
+      y: { duration: 0.5, delay: 4 },
     },
   },
 }
-export const fadeSlideHero2 = {
-  hidden: { opacity: 0, y: '-50%', x: '-50%' },
+export const heroSloganAnimation2 = {
+  hidden: { opacity: 0, y: '0%', x: '-50%' },
   show: {
     opacity: 1,
     y: '50%',
     x: '-50%',
     transition: {
-      opacity: { duration: 0.5, delay: 2 },
-      y: { duration: 0.5, delay: 2.5 },
+      opacity: { duration: 0.5, delay: 2.5 },
+      y: { duration: 0.5, delay: 4 },
     },
   },
 }
-export const fadeSlideHero3 = {
-  hidden: { opacity: 0, y: '100%' },
-  show: {
-    opacity: 1,
-    y: '0%',
-    transition: {
-      opacity: { duration: 0.5, delay: 3 },
-      y: { duration: 0.5, delay: 3.25 },
-    },
-  },
-}
-export const expandHero = {
+export const heroSubTitleAnimation = {
   hidden: { opacity: 0, scaleY: 0 },
   show: {
     opacity: 1,
     scaleY: 1,
     transition: {
-      opacity: { duration: 0.5, delay: 3 },
-      scaleY: { duration: 0.5, delay: 3 },
+      opacity: { duration: 0.5, delay: 4 },
+      scaleY: { duration: 0.5, delay: 4 },
     },
   },
 }
-export const triangle1 = {
-  hidden: { opacity: 0, transform: 'scale(2)' },
+export const heroButtonAnimation = {
+  hidden: { opacity: 0, y: '100%' },
   show: {
     opacity: 1,
-    transform: 'scale(1)',
+    y: '0%',
     transition: {
-      opacity: { delay: 3, duration: 0.3 },
-      transform: { delay: 4, duration: 0.3 },
+      opacity: { duration: 0.5, delay: 4 },
+      y: { duration: 0.5, delay: 4.25 },
+    },
+  },
+}
+export const motionHeroLogos = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 4.5,
+      staggerChildren: 0.15,
+      ease: 'easeIn',
+      opacity: { delay: 4.5 },
+    },
+  },
+}
+export const motionHeroLogosChildren = {
+  hidden: { y: '100%' },
+  show: {
+    y: '0%',
+    transition: {
+      type: 'spring',
+      damping: 10,
+      stiffness: 50,
+      duration: 0.25,
     },
   },
 }
 
-export const shine = `
+export const motionHeroNotice = {
+  hidden: { opacity: 0, y: '100%' },
+  show: {
+    opacity: 1,
+    y: '0%',
+    transition: {
+      delay: 4.5,
+      opacity: { duration: 1 },
+      y: { type: 'spring', damping: 10, stiffness: 50 },
+    },
+  },
+}
+export const randomTextFadeIn = `
+animation: fadeIn 500ms ease-in;
 
-animation: shine 1s cubic-bezier(0, 1, 1, 0.1) 4s;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+`
+export const shine = `
+animation: shine 1s cubic-bezier(0, 1, 1, 0.1) 3.25s;
 background: url(${cloudImg.shineBg});
 -webkit-background-clip: text;
-background-position-x: 0%;
+background-position-x: -50%;
 background-repeat: no-repeat;
 @keyframes shine {
   0% {
@@ -81,7 +113,23 @@ background-repeat: no-repeat;
   }
 }
 `
+export const spinning = `
+animation: spinningAnimation 5s infinite;
 
+@keyframes spinningAnimation {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+`
 export const pulseRings = `
 .pulsing-rings {
   position: absolute;
@@ -132,43 +180,6 @@ export const pulseRings = `
 }
 `
 
-export const motionStaggerLogos = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      delayChildren: 1,
-      staggerChildren: 0.15,
-      ease: 'easeIn',
-      opacity: { delay: 1 },
-    },
-  },
-}
-export const ySpring = {
-  hidden: { y: '100%' },
-  show: {
-    y: '0%',
-    transition: {
-      type: 'spring',
-      damping: 10,
-      stiffness: 50,
-      duration: 0.25,
-    },
-  },
-}
-
-export const slideUp = {
-  hidden: { opacity: 0, y: '100%' },
-  show: {
-    opacity: 1,
-    y: '0%',
-    transition: {
-      delay: 2,
-      opacity: { duration: 1 },
-      y: { type: 'spring', damping: 10, stiffness: 50 },
-    },
-  },
-}
 export const rasterStaggers = `
 .raster-line-v:nth-of-type(21), .raster-line-v:nth-of-type(22) {
   transition-delay: 0.025s;

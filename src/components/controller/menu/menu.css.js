@@ -30,7 +30,7 @@ export const OverlayContent = styled(OverlayContainer).withConfig({
   z-index: 1000;
   will-change: transform, opacity;
 
-  [class*='LogoSvg'] {
+  [class*='LogoSvgAnimated'] {
     position: absolute;
     z-index: 10000;
     opacity: 0.66;
@@ -65,7 +65,7 @@ export const OverlayContent = styled(OverlayContainer).withConfig({
       opacity: 0;
       transition: opacity 375ms ease 1075ms;
     }
-    [class*='LogoSvg'] {
+    [class*='LogoSvgAnimated'] {
       span.animatedLogo {
         opacity: 0 !important;
         transition: opacity 375ms ease 500ms;
@@ -87,7 +87,7 @@ export const OverlayContent = styled(OverlayContainer).withConfig({
       will-change: transform;
     }
 
-    [class*='LogoSvg'] {
+    [class*='LogoSvgAnimated'] {
       span.animatedLogo {
         opacity: 1 !important;
         transition: opacity 500ms ease 700ms;

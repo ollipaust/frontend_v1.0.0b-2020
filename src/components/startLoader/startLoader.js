@@ -1,21 +1,37 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import { LoaderContainer } from './startLoader.css'
-import LogoSvg from 'components/logoSvg'
+import { LogoSvgAnimated } from 'components/logoSvg'
 import { light } from 'constants/colors'
+import fastMount from 'react-fast-mount'
 
-const StartLoader = ({ className }) => {
-  return (
-    <LoaderContainer className={className}>
-      <LogoSvg
-        delay={true}
-        speed={750}
-        className={className}
-        strokeWidth="10"
-        strokeColor={light}
-        fill="none"
-      />
-    </LoaderContainer>
-  )
+class StartLoader extends PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = { startLoading: true }
+  }
+  componentDidMount() {
+    setTimeout(() => this.setState({ startLoading: false }), 1000)
+  }
+  render() {
+    return (
+      <LoaderContainer
+        className={
+          this.state.startLoading === true ? 'loading' : 'loading-done'
+        }
+      >
+        <LogoSvgAnimated
+          delay={true}
+          speed={750}
+          className={
+            this.state.startLoading === true ? 'loading' : 'loading-done'
+          }
+          strokeWidth="10"
+          strokeColor={light}
+          fill="none"
+        />
+      </LoaderContainer>
+    )
+  }
 }
 
-export default StartLoader
+export default fastMount(StartLoader)

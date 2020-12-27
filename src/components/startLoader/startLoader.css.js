@@ -18,10 +18,10 @@ export const LoaderContainer = styled.div.withConfig({
 
   &.loading-done {
     transform: translateY(-100%);
-    transition: transform 600ms ease-out 1000ms;
+    transition: transform 500ms ease-out 1200ms;
   }
 
-  [class*='LogoSvg'] {
+  [class*='LogoSvgAnimated'] {
     width: 100px;
     margin: 0 auto;
     pointer-events: none;
@@ -30,7 +30,7 @@ export const LoaderContainer = styled.div.withConfig({
     &.loading-done {
       opacity: 0;
       transform: translateY(700%);
-      transition: transform 500ms ease-out 1000ms, opacity 600ms ease-out 1000ms;
+      transition: transform 500ms ease-out 1200ms, opacity 500ms ease-out 1200ms;
     }
   }
 `

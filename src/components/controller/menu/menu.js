@@ -11,7 +11,7 @@ import {
   OverlayBoxRight,
   OverlayBoxLeft,
 } from './menu.css'
-import LogoSvg from 'components/logoSvg'
+import { LogoSvgAnimated } from 'components/logoSvg'
 import Socials from 'components/socials'
 
 class Menu extends PureComponent {
@@ -67,7 +67,7 @@ class Menu extends PureComponent {
             tabIndex="0"
           />
 
-          <LogoSvg delay={2000} speed={5000} className="animatedLogo" />
+          <LogoSvgAnimated delay={2000} speed={5000} className="animatedLogo" />
           <LogoContainer>
             <LogoLight />
           </LogoContainer>

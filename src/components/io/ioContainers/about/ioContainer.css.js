@@ -14,24 +14,25 @@ export const IoAboutTextContainer = styled.div`
   transition: opacity 500ms ease;
 
   &.about-text {
-    margin-top: 200px; 
+    min-height: 50vh;
+    padding-top: 200px;
 
     h6 {
       margin-bottom: 75px;
     }
 
     .flexbox {
-      flex-direction: row;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       justify-content: space-between;
 
       p {
         text-align: justify;
-        flex: 0 0 47.5%;
+        width: 50%;
+        margin-bottom: 50px;
 
         > span {
           font-family: Arial, sans-serif;
-          font-weight: 500;
         }
       }
     }
@@ -39,7 +40,7 @@ export const IoAboutTextContainer = styled.div`
 
   &.marquee-text {
     position: relative;
-    height: 100vh;
+    min-height: 75vh;
     flex-direction: column;
   
     
@@ -50,43 +51,48 @@ export const IoAboutTextContainer = styled.div`
   }
 
   &.statement {
-    padding: 100px 0;
+    margin: 100px 0;
   }
-
   &.reasons {
     flex-direction: row;
     justify-content: space-between;
-
+    
     .title {
       margin-bottom: 50px;
     }
 
+    .rarr > span {
+      color: ${accent};
+    }
     div {
       &:nth-of-type(1) {
-        flex: 0 0 20%; 
+        flex: 0 0 25%; 
       }
       &:nth-of-type(2) {
         flex: 0 0 70%; 
       }
     }
 
-    ul > li {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between
-      padding-top: 25px;
-      padding-bottom: 100px;
-      border-top: 2px solid ${accent};
+    ul {
 
-      .number {
-        flex: 0 0 10%;
-        > span { color: ${accent}; }
-      }
-      .title  {
-        flex: 0 0 60%;
-      }
-      .text {
-        flex: 1 0 0;
+      li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between
+        padding-top: 25px;
+        padding-bottom: 100px;
+        border-top: 2px solid ${accent};
+  
+        .number {
+          flex: 0 0 10%;
+          > span { color: ${accent}; }
+        }
+        .title  {
+          flex: 0 0 50%;
+        }
+        .text {
+          flex: 1 0 0;
+        }
       }
     }
   }
@@ -152,9 +158,8 @@ export const IoRasterContainer = styled.div`
     left: 50%;
     transform: translateX(-50%) translateY(-25%);
     width: 100%;
-    opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-    transition: opacity 500ms ease
-      ${({ isVisible }) => (isVisible ? '1.2s' : '0.5s')};
+    opacity: ${({ hasBeenVisible }) => (hasBeenVisible ? 1 : 0)};
+    transition: opacity 500ms ease 1.2s;
     will-change: opacity;
   }
   .portrait-container {
@@ -163,9 +168,8 @@ export const IoRasterContainer = styled.div`
     left: 50%;
     transform: translateX(-50%) translateY(-20%);
     width: 100%;
-    opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-    transition: opacity 500ms ease
-      ${({ isVisible }) => (isVisible ? '1.5s' : '0.5s')};
+    opacity: ${({ hasBeenVisible }) => (hasBeenVisible ? 1 : 0)};
+    transition: opacity 500ms ease 1.5s;
     will-change: opacity;
   }
 `

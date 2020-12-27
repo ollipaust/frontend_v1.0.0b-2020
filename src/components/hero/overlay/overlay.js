@@ -3,13 +3,17 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { Container, LogosContainer, NoticeBox } from './overlay.css'
 import { cloudImg } from 'constants/cloudRes'
-import { motionStaggerLogos, slideUp, ySpring } from 'constants/animations'
+import {
+  motionHeroLogos,
+  motionHeroNotice,
+  motionHeroLogosChildren,
+} from 'constants/animations'
 
 const HeroOverlay = () => {
   const MotionHeroLogosContainer = ({ className, children }) => (
     <motion.div
       className={className}
-      variants={motionStaggerLogos}
+      variants={motionHeroLogos}
       initial="hidden"
       animate="show"
     >
@@ -19,7 +23,7 @@ const HeroOverlay = () => {
   const MotionHeroNoticeContainer = ({ className, children }) => (
     <motion.div
       className={className}
-      variants={slideUp}
+      variants={motionHeroNotice}
       initial="hidden"
       animate="show"
     >
@@ -46,7 +50,7 @@ const HeroOverlay = () => {
       <StyledMotionHeroLogosContainer>
         <a href="https://www.w3.org/TR/html53/" title="W3C HTML5 Standards">
           <motion.img
-            variants={ySpring}
+            variants={motionHeroLogosChildren}
             src={cloudImg.html}
             width="24"
             height="33"
@@ -56,7 +60,7 @@ const HeroOverlay = () => {
         </a>
         <a href="https://www.w3.org/TR/css-2018/" title="W3C CSS3 Standards">
           <motion.img
-            variants={ySpring}
+            variants={motionHeroLogosChildren}
             src={cloudImg.css}
             width="24"
             height="33"
@@ -69,7 +73,7 @@ const HeroOverlay = () => {
           title="ECMAScript® 2016 Language Specification"
         >
           <motion.img
-            variants={ySpring}
+            variants={motionHeroLogosChildren}
             src={cloudImg.es6}
             width="50"
             height="33"
@@ -82,7 +86,7 @@ const HeroOverlay = () => {
           title="A JavaScript library for building user interfaces "
         >
           <motion.img
-            variants={ySpring}
+            variants={motionHeroLogosChildren}
             src={cloudImg.react}
             width="50"
             height="33"
@@ -95,7 +99,7 @@ const HeroOverlay = () => {
           title="Gatsby is a free and open source frameportfolio based on React that helps developers build blazing fast websites and apps"
         >
           <motion.img
-            variants={ySpring}
+            variants={motionHeroLogosChildren}
             src={cloudImg.gatsby}
             width="50"
             height="33"
@@ -113,7 +117,7 @@ const HeroOverlay = () => {
             </a>
           </span>
           <br />
-          <span>Latest update: 23.12.2020</span>
+          <span>Currently in Development. Latest update: 23.12.2020</span>
         </p>
       </StyledMotionHeroNoticeContainer>
     </Container>

@@ -53,6 +53,7 @@
     "react-device-detect": "^1.13.1",
     "react-div-100vh": "^0.3.8",
     "react-dom": "^16.4.2",
+    "react-fast-mount": "^0.2.2",
     "react-gsap": "^2.2.1",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.10.0",

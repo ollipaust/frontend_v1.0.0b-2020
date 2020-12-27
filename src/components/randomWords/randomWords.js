@@ -5,11 +5,10 @@ const RandomWords = () => {
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    setTimeout(() => setIsActive(true), 3250)
+    setTimeout(() => setIsActive(true), 4000)
   }, [])
 
   const wordsList = [
-    'nice',
     'amazing',
     'beautiful',
     'creative',
@@ -27,15 +26,10 @@ const RandomWords = () => {
     'lively',
     'dynamic',
   ]
-  console.log(isActive)
-  const toggle = isActive ? 'active' : 'inactive'
-
-  return (
-    <TextLoop
-      interval="1500"
-      children={wordsList}
-      className={`loop ${toggle}`}
-    />
-  )
+  if (isActive != true) {
+    return null
+  } else {
+    return <TextLoop interval="1500" children={wordsList} className="loop" />
+  }
 }
 export default RandomWords

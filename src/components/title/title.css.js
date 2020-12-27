@@ -31,7 +31,7 @@ export const Text = styled.span.withConfig({
         case 'larger':
           return '6rem'
         case 'large':
-          return '4rem'
+          return '3.5rem'
         case 'medium':
           return '2rem'
         default:

@@ -53,7 +53,7 @@ body.about {
             cursor: grab;
 
             &:hover {
-               transform: scale(1.15);
+               transform: scale(1.05);
                transform-origin: center;
                transition: transform 500ms ease;
             }
@@ -61,7 +61,7 @@ body.about {
     }
   
 }
-body.projects {
+body.work {
 
 }
 body.stack {

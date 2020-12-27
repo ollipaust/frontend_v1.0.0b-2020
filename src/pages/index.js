@@ -9,10 +9,10 @@ import { HeroButton, Indicator, Divider } from 'constants/elements'
 import RandomWords from 'components/randomWords'
 import { motion } from 'framer-motion'
 import {
-  fadeSlideHero1,
-  fadeSlideHero2,
-  fadeSlideHero3,
-  expandHero,
+  heroSloganAnimation1,
+  heroSloganAnimation2,
+  heroButtonAnimation,
+  heroSubTitleAnimation,
 } from 'constants/animations'
 
 const Index = () => (
@@ -22,13 +22,21 @@ const Index = () => (
     <BodyClassName className="home" />
     <Hero>
       <Title as="h1" size="super">
-        <motion.i initial="hidden" animate="show" variants={fadeSlideHero1}>
+        <motion.i
+          initial="hidden"
+          animate="show"
+          variants={heroSloganAnimation1}
+        >
           I create
         </motion.i>
         <br />
         <RandomWords />
         <br />
-        <motion.i initial="hidden" animate="show" variants={fadeSlideHero2}>
+        <motion.i
+          initial="hidden"
+          animate="show"
+          variants={heroSloganAnimation2}
+        >
           websites
         </motion.i>
       </Title>
@@ -37,7 +45,7 @@ const Index = () => (
         className="sub-title-container"
         initial="hidden"
         animate="show"
-        variants={expandHero}
+        variants={heroSubTitleAnimation}
       >
         <Divider />
         <Title as="h2" size="medium">
@@ -45,7 +53,11 @@ const Index = () => (
         </Title>
       </motion.div>
 
-      <motion.div initial="hidden" animate="show" variants={fadeSlideHero3}>
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={heroButtonAnimation}
+      >
         <HeroButton to="/about">
           <Indicator />
           Get to know me!

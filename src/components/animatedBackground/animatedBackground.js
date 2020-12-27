@@ -1,23 +1,24 @@
 import React from 'react'
-import '../../../../static/js/vantaWaves.min.js'
+import '../../../static/js/vantaWaves.min.js'
 import * as THREE from 'three'
-import { VantaContainer } from '../animatedBackground.css'
+import { VantaContainer } from './animatedBackground.css'
+import fastMount from 'react-fast-mount'
 
 class BackgroundWaves extends React.Component {
   constructor() {
     super()
-    this.vantaElement = React.createRef()
+    this.wavesElement = React.createRef()
   }
 
   componentDidMount() {
-    const vantaElement = this.vantaElement.current
+    const wavesElement = this.wavesElement.current
     const accentColor = this.props.accentColor
     const shineIntensity = this.props.shineIntensity
 
     if (typeof window !== undefined) {
       setTimeout(() => {
         this.effect = window.VANTA.WAVES({
-          el: vantaElement,
+          el: wavesElement,
           THREE: THREE,
           mouseControls: true,
           touchControls: true,
@@ -41,8 +42,8 @@ class BackgroundWaves extends React.Component {
   }
 
   render() {
-    return <VantaContainer ref={this.vantaElement} />
+    return <VantaContainer ref={this.wavesElement} />
   }
 }
 
-export default BackgroundWaves
+export default fastMount(BackgroundWaves)

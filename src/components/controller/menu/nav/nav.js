@@ -21,12 +21,12 @@ const Nav = () => {
       <li>
         <LinkContainer>
           <Link
-            to="/projects"
+            to="/work"
             activeClassName="active"
-            className="creations"
+            className="work"
             data-info="02"
           >
-            <span>Projects</span>
+            <span>Work</span>
           </Link>
         </LinkContainer>
       </li>
@@ -39,7 +39,7 @@ const Nav = () => {
             className="stack"
             data-info="03"
           >
-            <span>Techstack</span>
+            <span>Tech stack</span>
           </Link>
         </LinkContainer>
       </li>

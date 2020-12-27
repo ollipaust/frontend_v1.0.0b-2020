@@ -52,7 +52,7 @@ will-change: opacity;
         transform: translateY(-50%) translateZ(0);
         transition: all 500ms ease-in 0ms;
       }
-    [class*='LogoSvg'] {
+    [class*='LogoSvgAnimated'] {
         opacity: 0!important;
         transition: opacity 500ms ease 500ms!important;
     }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import Head from 'components/head'
@@ -16,7 +16,7 @@ import { TransitionStyles } from './transitions/transitions.css'
 
 import { TransitionsController, TransitionsView } from './transitions'
 import Div100vh from 'react-div-100vh'
-import BackgroundWaves from 'components/animatedBackground/waves'
+import BackgroundWaves from 'components/animatedBackground'
 import StartLoader from 'components/startLoader'
 
 import { neutral } from 'constants/colors'
@@ -24,12 +24,6 @@ import { isIE } from 'react-device-detect'
 import { PageLayoutStyles } from 'components/pageLayout/pageLayout.css'
 
 const Interface = ({ children, location }) => {
-  const [startLoading, setStartLoading] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => setStartLoading(false), 1000)
-  }, [])
-
   const screenOrientation = useScreenOrientation()
 
   return (
@@ -47,11 +41,7 @@ const Interface = ({ children, location }) => {
       <Head />
       <BodyClassName className={hasTouch ? 'has-touch' : 'has-no-touch'} />
 
-      {process.env.NODE_ENV !== 'development' ? (
-        <StartLoader
-          className={startLoading === true ? 'loading' : 'loading-done'}
-        />
-      ) : null}
+      <StartLoader />
 
       <BackgroundWaves accentColor={neutral} shineIntensity={250} />
 

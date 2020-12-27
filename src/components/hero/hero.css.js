@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { glass, dark75 } from 'constants/colors'
-import { shine } from 'constants/animations'
+import { shine, randomTextFadeIn } from 'constants/animations'
 
 export const HeroContainer = styled.section.withConfig({
   displayName: 'HeroContainer',
@@ -46,6 +46,7 @@ export const HeroTextContainer = styled.div.withConfig({
       left: 50%;
       white-space: nowrap;
       pointer-events: all;
+
       ${shine}
 
       @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
@@ -54,6 +55,7 @@ export const HeroTextContainer = styled.div.withConfig({
     }
 
     .loop {
+      ${randomTextFadeIn}
       transform: translateX(-50%) translateY(-50%);
 
       &.inactive {

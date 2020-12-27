@@ -8,7 +8,7 @@ import PageLayout from 'components/pageLayout'
 import Div100vh from 'react-div-100vh'
 
 const Stack = () => (
-  <PageLayout prev="projects" next="contact" bodyClass="stack">
+  <PageLayout prev="work" next="contact" bodyClass="stack">
     <Head pageTitle="TechStack" />
 
     <div className="flexbox">

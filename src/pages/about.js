@@ -12,7 +12,7 @@ import { Raster, Divider } from 'constants/elements'
 import Marquee from 'components/marqueeText'
 
 const About = () => (
-  <PageLayout prev="home" next="projects" bodyClass="about">
+  <PageLayout prev="home" next="work" bodyClass="about">
     <Head pageTitle="About" />
 
     <IoAboutRaster>
@@ -39,28 +39,24 @@ const About = () => (
 
     <IoAboutTextContainer className="about-text">
       <Title as="h6" size="large" className="textCenter title">
-        Creating websites is my passion, a steady source of motivation that
+        Creating websites is my passion - a steady source of motivation that
         drives me to excel.
       </Title>
 
       <div className="flexbox">
         <Title as="p" size="medium">
           I really love web design &amp; coding ever since I got my first PC as
-          a little kid. For me it&apos;s the most enjoyable way to express my
-          ideas and visions. Also it&apos;s super rewarding and gives me so much
-          satisfaction when I solve a coding problem or revise designs and the
-          final product works and looks as beautiful as I imagined. When
-          I&apos;m working on a challenging project, it&apos;s like I&apos;m
-          entering a zone where I seem to forget the world around me...
+          a little kid. In the beginning it was just a hobby, a way of passing
+          the time when I wasn&apos;t outside doing things kids usually do. But
+          nowadays it&apos;s the most enjoyable way to express my ideas and
+          visions. It&apos;s super rewarding when I solve a coding problem and
+          when the final product works and looks as beautiful as I imagined.
         </Title>
         <Title as="p" size="medium">
-          I&apos;ve been working at several companies ranging from real estate,
-          media agency, coworking and hospitality. Casually I&apos;m also
-          freelancing for smaller businesses when friends recommend me to their
-          acquaintances. For most of the time I was primarily using WordPress,
-          but for about a year I&apos;ve been expanding and improving my skills
-          and knowledge in Frontend Development and I absolutely dig React and
-          especially Gatsby which this website is also built with.
+          As for my career I&apos;ve been working at several companies ranging
+          from real estate, media agency, coworking and hospitality. Casually
+          I&apos;m also freelancing for smaller businesses when friends
+          recommend me to their acquaintances.
         </Title>
       </div>
     </IoAboutTextContainer>
@@ -84,24 +80,33 @@ const About = () => (
     <IoAboutTextContainer className="reasons flexbox">
       <div>
         <Title as="h3" size="large" className="title">
-          Why is <u>modern</u> webdesign important?
+          Why do I believe <u>modern</u> webdesign is so important?
         </Title>
         <p>
-          Your website design is one of the most important assets in your
-          business, because your audience care about design, whether consciously
-          or not - we all react to visual stimulation.
+          As a web specialist and enthusiast I have the tools and expertise to
+          achieve great experiences and results through my excellent sense for
+          creativity, technology and marketing. I&apos;m always trying to
+          improve myself and keep up-to-date with latest trends and I want to
+          make sure that what I create is always of high quality.
           <br />
           <br />
-          People are naturally drawn to good design. When it comes to your
-          website design, studies have shown again and again that users quickly
-          judge your business based on visuals alone, and will often stop
-          interacting with your website if it&apos;s poorly designed.
+          Almost 60% of the world&apos;s population has access to the world wide
+          web and it&apos;s exponentially increasing year by year. People are
+          naturally drawn to good design. When it comes to your website design,
+          studies have shown again and again that users quickly judge your
+          business based on visuals alone, and will often stop interacting with
+          your website if it&apos;s poorly designed.
           <br />
           <br />
-          Also companies who refuse to adapt as the world and trends changes,
-          cannot sustain competitors who do so. Almost 60% of the global
-          population have access to the world wide web and it&apos;s crucial for
-          the impact on your business and audience.
+          That&apos;s why I think that a company&apos;s online presence should
+          be treated as a very important business asset, as it has the potential
+          to tenfold or even hundredfold the returns of your initial investment,
+          which can be substantial at the beginning.
+          <br />
+          <br />
+          <Title as="h3" size="large" className="rarr">
+            &rarr;
+          </Title>
         </p>
       </div>
       <div>
@@ -111,13 +116,16 @@ const About = () => (
               01
             </Title>
             <Title as="h3" size="large" className="title">
-              It sets the first impression
+              It sets the
+              <br />
+              first impression
             </Title>
             <p className="text">
-              When your audience visits your website, it gives them the first
-              impression of your business. They will judge your business within
-              seconds. Just like in real-life interactions. In these first few
-              seconds, you want to make a positive impact on your audience.
+              When people visit your website, it gives them the first impression
+              of your business. They will judge your business within seconds. In
+              these first few seconds, you want to make a positive impact on
+              your audience, because humans care about design, whether
+              consciously or not - we all react to visual stimulation.
               <br />
               <br />
               If your website looks unappealing or outdated, your audience will
@@ -159,7 +167,9 @@ const About = () => (
               03
             </Title>
             <Title as="h3" size="large" className="title">
-              It builds trust with your audience
+              It builds trust
+              <br />
+              with your audience
             </Title>
             <p className="text">
               Designs that look modern and professional tend to encourage trust.
@@ -179,10 +189,12 @@ const About = () => (
           </li>
           <li>
             <Title as="h5" size="medium" className="number">
-              03
+              04
             </Title>
             <Title as="h3" size="large" className="title">
-              It helps with your SEO-Strategy
+              It helps with
+              <br />
+              your SEO-Strategy
             </Title>
             <p className="text">
               Many web design elements and practices of how you publish content
