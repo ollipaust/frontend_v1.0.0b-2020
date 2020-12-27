@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const VantaContainer = styled.div.withConfig({
+export const Container = styled.div.withConfig({
   displayName: 'AnimatedBackground',
 })`
   position: absolute;

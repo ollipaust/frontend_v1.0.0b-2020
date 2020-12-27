@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import '../../../static/js/waves.min.js'
 import * as THREE from 'three'
-import { VantaContainer } from './animatedBackground.css'
+import { Container } from './animatedBackground.css'
 
-class BackgroundWaves extends React.Component {
+class BackgroundWaves extends PureComponent {
   constructor() {
     super()
     this.wavesElement = React.createRef()
@@ -15,24 +15,22 @@ class BackgroundWaves extends React.Component {
     const shineIntensity = this.props.shineIntensity
 
     if (typeof window !== undefined) {
-      setTimeout(() => {
-        this.effect = window.VANTA.WAVES({
-          el: wavesElement,
-          THREE: THREE,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: true,
-          minHeight: 300.0,
-          minWidth: 300.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: accentColor,
-          shininess: shineIntensity,
-          waveHeight: 10.0,
-          waveSpeed: 0.5,
-          zoom: 1,
-        })
-      }, 1500)
+      this.effect = window.VANTA.WAVES({
+        el: wavesElement,
+        THREE: THREE,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        minHeight: 300.0,
+        minWidth: 300.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: accentColor,
+        shininess: shineIntensity,
+        waveHeight: 10.0,
+        waveSpeed: 0.5,
+        zoom: 1,
+      })
     }
   }
 
@@ -41,7 +39,7 @@ class BackgroundWaves extends React.Component {
   }
 
   render() {
-    return <VantaContainer ref={this.wavesElement} />
+    return <Container ref={this.wavesElement} />
   }
 }
 
