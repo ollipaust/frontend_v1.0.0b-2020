@@ -129,7 +129,17 @@ export const IoAboutTextContainer = styled.div`
           ${({ isVisible }) => (isVisible ? '1.2s' : '0s')};
         will-change: opacity;
 
-        @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+        img {
+          width: 1200px;
+          transform: scale(1) translateX(-25%);
+          transition: transform 500ms ease;
+          cursor: grab;
+
+          &:hover {
+             transform: scale(1.05) translateX(-25%);
+             transform-origin: center;
+             transition: transform 500ms ease;
+          }
         }
       }
       .raster-text {

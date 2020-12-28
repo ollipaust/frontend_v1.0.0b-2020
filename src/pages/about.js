@@ -3,7 +3,7 @@ import Head from 'components/head'
 
 import Title from 'components/title'
 
-import PageLayout from 'components/pageLayout'
+import PageLayout from 'components/interface/pageLayout'
 
 import { cloudImg } from 'constants/cloudRes'
 import IoAboutContainer from 'components/io/ioContainers/about/ioContainer'

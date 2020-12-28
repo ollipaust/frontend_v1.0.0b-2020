@@ -7,12 +7,9 @@ import Pagination from './pagination'
 
 import BodyClassName from 'react-body-classname'
 
-import { PageLayoutStyles } from './pageLayout.css'
-
 const PageLayout = ({ children, prev, next, bodyClass }) => {
   return (
     <React.Fragment>
-      <PageLayoutStyles />
       <BodyClassName className={bodyClass} />
 
       <PageContent>{children}</PageContent>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Title from 'components/title'
-import PageLayout from 'components/pageLayout'
+import PageLayout from 'components/interface/pageLayout'
 import Div100vh from 'react-div-100vh'
 import Head from 'components/head'
 

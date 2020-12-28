@@ -11,21 +11,6 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-eslint`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-webpack-size`,
-    {
-      resolve: `gatsby-plugin-netlify-headers`,
-      options: {
-        headers: {
-          "/*": [
-            "Cache-Control: public, max-age=2592000, no-cache",
-            "Accept-Encoding: *",
-            "Strict-Transport-Security: max-age=2592000",
-          ],
-        },
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,6 +18,9 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-webpack-size`,
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {

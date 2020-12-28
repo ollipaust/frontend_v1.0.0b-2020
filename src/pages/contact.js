@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'components/head'
 
-import PageLayout from 'components/pageLayout'
+import PageLayout from 'components/interface/pageLayout'
 
 import NetlifyForm from 'react-netlify-form'
 

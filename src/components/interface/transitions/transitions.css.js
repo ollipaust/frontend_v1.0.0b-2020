@@ -3,7 +3,6 @@ import { dark75 } from 'constants/colors'
 import MEDIA from 'helpers/mediaTemplates'
 
 export const TransitionStyles = createGlobalStyle`
-
 will-change: opacity;
 
 [class*='AppView'] {

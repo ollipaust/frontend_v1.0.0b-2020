@@ -2,14 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Head from 'components/head'
-import BodyClassName from 'react-body-classname'
-import hasTouch from 'has-touch'
-
-import BrowserNotice from 'components/browserNotice'
 
 import AppView from './appViewWithScrollbars'
 import Controller from 'components/controller'
-import useScreenOrientation from 'helpers/screenOrientation'
 
 import { GlobalStyles } from 'global.css'
 import { TransitionStyles } from './transitions/transitions.css'
@@ -20,26 +15,19 @@ import BackgroundWaves from 'components/animatedBackground'
 import StartLoader from 'components/startLoader'
 
 import { neutral } from 'constants/colors'
-import { isIE } from 'react-device-detect'
-import { PageLayoutStyles } from 'components/pageLayout/pageLayout.css'
 
 const Interface = ({ children, location }) => {
-  const screenOrientation = useScreenOrientation()
 
   return (
     <Div100vh>
       <GlobalStyles />
-      <PageLayoutStyles />
       <TransitionStyles />
 
-      {isIE ? (
-        <BrowserNotice>
-          <span>iwjefiwje</span>
-        </BrowserNotice>
-      ) : null}
-
       <Head />
-      <BodyClassName className={hasTouch ? 'has-touch' : 'has-no-touch'} />
+
+      <StartLoader />
+
+      <BackgroundWaves accentColor={neutral} shineIntensity={250} />
 
       <TransitionsController location={location}>
         <Controller />
@@ -47,12 +35,6 @@ const Interface = ({ children, location }) => {
 
       <TransitionsView location={location}>
         <AppView>
-          {screenOrientation === 'landscape-primary' && hasTouch ? (
-            <BrowserNotice>
-              <span>iwjefiwje</span>
-            </BrowserNotice>
-          ) : null}
-
           {children}
         </AppView>
       </TransitionsView>

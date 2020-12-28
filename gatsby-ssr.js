@@ -1,8 +1,8 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
-import AppProvider from './src/store/provider';
-import wrapPageInterface from './src/helpers/wrapPageElement';
+import AppProvider from 'store/provider';
+import wrapPageInterface from 'helpers/wrapPageElement';
 
 export const replaceRenderer = ({
   bodyComponent,
