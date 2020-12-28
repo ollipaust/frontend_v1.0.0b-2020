@@ -11,10 +11,7 @@ import { TransitionStyles } from './transitions/transitions.css'
 
 import { TransitionsController, TransitionsView } from './transitions'
 import Div100vh from 'react-div-100vh'
-import BackgroundWaves from 'components/animatedBackground'
-import StartLoader from 'components/startLoader'
 
-import { neutral } from 'constants/colors'
 
 const Interface = ({ children, location }) => {
 
@@ -25,9 +22,7 @@ const Interface = ({ children, location }) => {
 
       <Head />
 
-      <StartLoader />
-
-      <BackgroundWaves accentColor={neutral} shineIntensity={250} />
+      
 
       <TransitionsController location={location}>
         <Controller />
@@ -44,7 +39,6 @@ const Interface = ({ children, location }) => {
 }
 
 Interface.propTypes = {
-  children: PropTypes.node.isRequired,
   location: PropTypes.object.isRequired,
 }
 
