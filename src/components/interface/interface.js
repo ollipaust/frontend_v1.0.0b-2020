@@ -43,8 +43,6 @@ const Interface = ({ children, location }) => {
 
       <StartLoader />
 
-      <BackgroundWaves accentColor={neutral} shineIntensity={250} />
-
       <TransitionsController location={location}>
         <Controller />
       </TransitionsController>
@@ -60,6 +58,11 @@ const Interface = ({ children, location }) => {
           {children}
         </AppView>
       </TransitionsView>
+
+      
+      <BackgroundWaves accentColor={neutral} shineIntensity={250} />
+
+
     </Div100vh>
   )
 }
