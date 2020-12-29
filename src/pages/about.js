@@ -1,47 +1,32 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 import Head from 'components/head'
 
-import Title from 'components/title'
-
 import PageLayout from 'components/interface/pageLayout'
-
-import { cloudImg } from 'constants/cloudRes'
+import Title from 'components/title'
 import IoAboutContainer from 'components/io/ioContainers/about/ioContainer'
 import { Raster, Divider } from 'constants/elements'
 import Marquee from 'components/marqueeText'
+import Image from 'components/image'
 
-const About = () => (
+const About = ({ data }) => (
   <PageLayout prev="home" next="work" bodyClass="about">
-    <Head pageTitle="About" />
+    <Head pageTitle={data.aboutJson.pagetitle} />
 
-    <IoAboutContainer className="raster-text">
-      <div className="raster-text-container">
-        <div className="portrait-container">
-          <img
-            src={cloudImg.portrait}
-            className="portrait"
-            title="That's me"
-            alt="Portrait"
-          />
-        </div>
+    <IoAboutContainer className="head-text">
+      <div className="head-text-container">
+        <Image items={data.aboutJson.portrait} className="portrait-container" />
+
         <div className="raster-text">
-          <Title as="h1" size="super">
-            Hey, hi,
-            <br />
-            hello, yo,
-            <br /> what&apos;s up?
+          <Title as="h1" size="super" className="title">
+            {data.aboutJson.headtitle}
           </Title>
-          <p>
-            Thank you🙏 for browsing my website, I&apos;m so glad that you made
-            it here!😼 I&apos;m Olliver aka Olli 👋 and I&apos;m an Aquarius♒.
-            Furthermore a web designer and coder by ❤️, specializing in Frontend
-            Development using React/Gatsby with a focus👀 on responsive📱,
-            animated💨 and interactive👐 content/UXUI. I&apos;m 2️⃣7️⃣ years
-            young, born in the Philippines 🇵🇭 and raised in Berlin, Germany 🇩🇪 -
-            the best city in the world. Ever since I was a little kid I loved to
-            be artsy and creative🎨 and started my career💼 in IT🖥️ a veeery
-            long time ago as an autodidact.
-          </p>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.aboutJson.introtext.childMarkdownRemark.html,
+            }}
+          />
         </div>
       </div>
       <Raster />
@@ -49,12 +34,14 @@ const About = () => (
 
     <IoAboutContainer className="aqua-text flexbox">
       <Title as="h3" size="larger" className="textCenter title">
-        Personality
+        {data.aboutJson.aquatexttitle}
       </Title>
-      <Title as="h3" size="large" className="quote">
-        &quot;Aquarius is known for being progressive, idealistic, intelligent,
-        and highly creative - not to mention a little quirky!&quot;
-      </Title>
+      <div
+        className="quote"
+        dangerouslySetInnerHTML={{
+          __html: data.aboutJson.aquatext.childMarkdownRemark.html,
+        }}
+      />
       <Title as="p" size="small" className="textCenter source">
         Source:{' '}
         <a
@@ -70,59 +57,77 @@ const About = () => (
 
     <IoAboutContainer className="love-text flexbox">
       <Title as="h3" size="larger" className="textCenter title">
-        Why I fell in love with
-        <br />
-        Web Design &amp; Development...
+        {data.aboutJson.lovetexttitle}
       </Title>
-      <p className="text">
-        Sometimes it&apos;s easy to lose sight of the why of what we do. Maybe
-        we started off with inspiration and lost it somewhere along the way.
-        Because other things came up. Because life demanded it. Because money
-        was involved. Because we wanted to promote certain personal aspects.
-      </p>
-
-      <p className="text">
-        This happened to me in my journey in IT and I feel that it&apos;s
-        important to reconnect with my &quot;why I do this&quot; and &quot;why I
-        started&quot;. I started creating websites when I was a kid. I learned
-        coding through Forum-Softwares like MyBB in order to build a
-        board-system for my online gaming friends (guild) and ended up building
-        and hosting a forum with almost 5k users with topics ranging from games,
-        fun, technology and daily life.
-      </p>
-      <p className="text">
-        What I love the most about websites and apps is that they are almost
-        all-encompassing, omniscient and omnipresent. It influences and affects
-        so many aspects in businesses and our personal lives. Whether you send a
-        letter to a loved one within a blink of an eye, connect with like-minded
-        people around the globe, who you&apos;d never get to meet otherwise or
-        share your art, thoughts, works, crafts or products.
-      </p>
-      <p className="text">
-        What motivated me then was the same thing that motivates me today -
-        Creating something with a purpose. Fun. Play. I just want to create
-        something special. Something beautiful. Something that shows dedication
-        and mindfulness. And I find it truly amazing that everyone is able to
-        contribute to a things that billions of people use daily.
-      </p>
+      <div
+        className="love-text-content flexbox"
+        dangerouslySetInnerHTML={{
+          __html: data.aboutJson.lovetext.childMarkdownRemark.html,
+        }}
+      />
     </IoAboutContainer>
 
     <IoAboutContainer className="marquee-text flexbox">
       <Title as="h2" size="larger" className="textCenter title">
-        Things that I work with
+        {data.aboutJson.marqueetexttitle}
       </Title>
       <Divider />
       <Marquee />
     </IoAboutContainer>
 
-    <IoAboutContainer className="statement">
-      <Title as="h2" size="larger" className="title">
-        Brilliant frontends can be achieved for all requirements. It is
-        important to start off simplistic, understand the emphasis, adjust
-        alignments, balance designs and then scale.
+    <IoAboutContainer className="statement-text">
+      <Title as="h2" size="larger">
+        {data.aboutJson.statementtext.childMarkdownRemark.rawMarkdownBody}
       </Title>
     </IoAboutContainer>
   </PageLayout>
 )
 
+About.propTypes = {
+  data: PropTypes.object.isRequired,
+}
+
 export default About
+
+export const query = graphql`
+  query AboutQuery {
+    aboutJson {
+      pagetitle
+      headtitle
+      introtext {
+        childMarkdownRemark {
+          html
+        }
+      }
+      aquatexttitle
+      aquatext {
+        childMarkdownRemark {
+          html
+        }
+      }
+      lovetexttitle
+      lovetext {
+        childMarkdownRemark {
+          html
+        }
+      }
+      marqueetexttitle
+      statementtext {
+        childMarkdownRemark {
+          rawMarkdownBody
+        }
+      }
+      portrait {
+        title
+        copy
+        image {
+          childImageSharp {
+            fluid(maxHeight: 1200, quality: 90) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    }
+  }
+`

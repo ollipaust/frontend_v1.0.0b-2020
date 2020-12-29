@@ -15,7 +15,6 @@ export const Text = styled.span.withConfig({
     line-height: 1em;
     pointer-events: all;
     display: block;
-    
 
     font-weight: ${({ size }) => () => {
       switch (size) {

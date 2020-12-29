@@ -1,0 +1,1 @@
+"Aquarius is known for being progressive, idealistic, intelligent, and highly creative - not to mention a little quirky!"

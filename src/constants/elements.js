@@ -4,8 +4,8 @@ import { accent, accentGradient150, dark, light } from 'constants/colors'
 import { pulseRings } from 'constants/animations'
 import { Link } from 'gatsby'
 
-export const HeroButton = styled(Link).withConfig({
-  displayName: 'HeroButton',
+export const StyledButton = styled(Link).withConfig({
+  displayName: 'StyledButton',
 })`
   display: inline-flex;
   place-content: center
@@ -199,7 +199,6 @@ export const wordsList = [
   'Responsiveness',
   'Redux',
   'SEO',
-  'Performance Optimization',
   'MongoDB',
   'Express',
   'Elasticsearch',

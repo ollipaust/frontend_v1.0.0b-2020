@@ -1,37 +1,44 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { Component } from 'react'
 import WAVES from 'vanta/dist/vanta.waves.min'
 import * as THREE from 'three'
 import { Container } from './animatedBackground.css'
 
-const BackgroundWaves = ({ accentColor, shineIntensity }) => {
-  const [vantaEffect, setVantaEffect] = useState(0)
-  const vantaRef = useRef(null)
-  useEffect(() => {
-    if (!vantaEffect) {
-      setTimeout(() => 
-      setVantaEffect(WAVES({
-        el: vantaRef.current,
-        THREE: THREE,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: true,
-        minHeight: 300.0,
-        minWidth: 300.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: accentColor,
-        shininess: shineIntensity,
-        waveHeight: 10.0,
-        waveSpeed: 0.5,
-        zoom: 1,
-      }))
-      , 1500)
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy()
-    }
-  }, [vantaEffect])
-  return <Container ref={vantaRef} />
+class BackgroundWaves extends Component {
+  constructor() {
+    super()
+    this.wavesRef = React.createRef()
+  }
+
+  componentDidMount() {
+    const wavesRef = this.wavesRef.current
+    const accentColor = this.props.accentColor
+    const shineIntensity = this.props.shineIntensity
+
+    this.effect = WAVES({
+      el: wavesRef,
+      THREE: THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: true,
+      minHeight: 300.0,
+      minWidth: 300.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: accentColor,
+      shininess: shineIntensity,
+      waveHeight: 10.0,
+      waveSpeed: 0.5,
+      zoom: 1,
+    })
+  }
+
+  componentWillUnmount() {
+    if (this.effect) this.effect.destroy()
+  }
+
+  render() {
+    return <Container ref={this.wavesRef} />
+  }
 }
 
 export default BackgroundWaves

@@ -1,0 +1,1 @@
+Brilliant frontends can be achieved for all requirements. It is important to start off simplistic, understand the emphasis, adjust alignments, balance designs and then scale.

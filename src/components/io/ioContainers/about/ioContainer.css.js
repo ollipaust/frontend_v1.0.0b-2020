@@ -7,6 +7,7 @@ export const IoAboutTextContainer = styled.div`
   transition: opacity 500ms ease;
 
   .title {
+    white-space: pre;
     > span {
       color: ${accent};
     }
@@ -23,6 +24,14 @@ export const IoAboutTextContainer = styled.div`
     .quote {
       width: 50%;
       align-self: center;
+
+      p {
+        font-family: Campton;
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1em;
+        margin-bottom: 4rem;
+      }
     }
   }
 
@@ -33,6 +42,11 @@ export const IoAboutTextContainer = styled.div`
       text-align: justify;
       width: 50%;
       align-self: center;
+      margin-bottom: 2rem;
+    }
+
+    .love-text-content {
+      flex-direction: column;
     }
   }
 
@@ -48,11 +62,21 @@ export const IoAboutTextContainer = styled.div`
     }
   }
 
-  &.statement {
+  &.statement-text {
     padding: 50px 0;
+
+    .statement-text-content {
+      p {
+        font-family: Campton;
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 1em;
+        margin-bottom: 4rem;
+      }
+    }
   }
 
-  &.raster-text {
+  &.head-text {
     position: relative;
     height: 100vh;
 
@@ -110,7 +134,7 @@ export const IoAboutTextContainer = styled.div`
 
     ${rasterStaggers}
 
-    .raster-text-container {
+    .head-text-container {
       position: absolute;
       top: 50px;
       left: 0;
@@ -129,16 +153,20 @@ export const IoAboutTextContainer = styled.div`
           ${({ isVisible }) => (isVisible ? '1.2s' : '0s')};
         will-change: opacity;
 
+        figure {
+          width: 1200px;
+        }
+
         img {
           width: 1200px;
           transform: scale(1) translateX(-25%);
-          transition: transform 500ms ease;
+          transition: transform 500ms ease 0s, opacity 500ms ease 0s !important;
           cursor: grab;
 
           &:hover {
-             transform: scale(1.05) translateX(-25%);
-             transform-origin: center;
-             transition: transform 500ms ease;
+            transform: scale(1.035) translateX(-25%);
+            transform-origin: center;
+            transition: transform 500ms ease 0s, opacity 500ms ease 0s !important;
           }
         }
       }

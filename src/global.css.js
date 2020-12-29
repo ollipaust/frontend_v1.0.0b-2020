@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
-import { accent, light, textDark, accentGradient } from 'constants/colors'
+import {
+  accent,
+  light,
+  textDark,
+  accentGradient,
+  darkest,
+} from 'constants/colors'
 import '../static/fonts/fontPrimary.css'
 
 export const GlobalStyles = createGlobalStyle`
@@ -99,6 +105,11 @@ export const GlobalStyles = createGlobalStyle`
   }
   .textLowercase > span {
     text-transform: lowercase;
+  }
+  .textStroke > span {
+    color: transparent!important;
+    text-transform: uppercase;
+    -webkit-text-stroke: 2px ${darkest} !important;
   }
   video {
     max-width: 100%;

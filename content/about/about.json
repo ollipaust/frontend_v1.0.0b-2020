@@ -1,5 +1,17 @@
 {
-  "title": "About",
-  "content": "content.md",
-  "imageUrl": "https://res.cloudinary.com/opco-studio/image/upload/v1596906041/about_b0wssa.jpg"
+  "pagetitle": "About",
+  "headtitle": "Hey, hi,\nhello, yo,\nwhat's up?",
+  "introtext": "introtext.md",
+  "aquatexttitle": "Me in a Nutshell ",
+  "aquatext": "aquatext.md",
+  "lovetexttitle": "Why I fell in love with\nWeb Design & Development...",
+  "lovetext": "lovetext.md",
+  "marqueetexttitle": "Things that I work with...",
+  "statementtext": "statementtext.md",
+  "photo": "../images/about/olli_photo_1200w_hy7x4y.jpg",
+  "portrait": [{
+    "title": "Portrait",
+    "copy": "Thats's me",
+    "image": "../images/about/olli_photo_1200w_hy7x4y.jpg"
+  }]
 }

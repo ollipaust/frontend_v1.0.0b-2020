@@ -109,9 +109,6 @@ export default class IO extends Component {
       this.ref = ref
     }
   }
-  componentWillUnmount() {
-    this.io.disconnect()
-  }
 
   render() {
     const { isVisible, hasBeenVisible } = this.state

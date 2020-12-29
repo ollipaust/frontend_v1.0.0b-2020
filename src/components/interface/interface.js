@@ -17,7 +17,6 @@ import StartLoader from 'components/startLoader'
 import { neutral } from 'constants/colors'
 
 const Interface = ({ children, location }) => {
-
   return (
     <Div100vh>
       <GlobalStyles />
@@ -34,11 +33,8 @@ const Interface = ({ children, location }) => {
       </TransitionsController>
 
       <TransitionsView location={location}>
-        <AppView>
-          {children}
-        </AppView>
+        <AppView>{children}</AppView>
       </TransitionsView>
-
     </Div100vh>
   )
 }

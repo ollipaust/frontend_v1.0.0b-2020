@@ -3,7 +3,7 @@ import Head from 'components/head'
 
 import Hero from 'components/hero'
 import Title from 'components/title'
-import { HeroButton, Indicator, Divider } from 'constants/elements'
+import { StyledButton, Indicator, Divider } from 'constants/elements'
 import RandomWords from 'components/randomWords'
 import { motion } from 'framer-motion'
 import {
@@ -55,10 +55,10 @@ const Index = () => (
         animate="show"
         variants={heroButtonAnimation}
       >
-        <HeroButton to="/about">
+        <StyledButton to="/about">
           <Indicator />
           Get to know me!
-        </HeroButton>
+        </StyledButton>
       </motion.div>
     </Hero>
   </React.Fragment>
