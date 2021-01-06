@@ -8,10 +8,24 @@ class StartLoader extends PureComponent {
     super(props)
     this.state = { startLoading: true }
   }
+
+  disableScrolling = () => {
+    if (this.state.startLoading) {
+      document.body.style.overflow = 'hidden'
+      document.documentElement.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'visible'
+      document.documentElement.style.overflow = 'visible'
+    }
+  }
+
   componentDidMount() {
     setTimeout(() => this.setState({ startLoading: false }), 1000)
   }
   render() {
+    if (typeof document !== 'undefined') {
+      this.disableScrolling()
+    }
     return (
       <LoaderContainer
         className={
