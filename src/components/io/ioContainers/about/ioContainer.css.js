@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { accent } from 'constants/colors'
-import { rasterStaggers } from 'constants/animations'
+import MEDIA from 'helpers/mediaTemplates'
 
 export const IoAboutTextContainer = styled.div`
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
@@ -11,6 +11,10 @@ export const IoAboutTextContainer = styled.div`
     > span {
       color: ${accent};
     }
+    ${MEDIA.PHONE &&
+      MEDIA.TABLET`
+      white-space: normal;
+        `}
   }
 
   .text {
@@ -21,9 +25,17 @@ export const IoAboutTextContainer = styled.div`
     flex-direction: column;
     padding: 50px 0;
 
+    @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+      display: block;
+    }
+
     .quote {
       width: 50%;
       align-self: center;
+
+      @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+        width: 100%;
+      }
 
       p {
         font-family: Campton;
@@ -31,6 +43,10 @@ export const IoAboutTextContainer = styled.div`
         font-weight: 700;
         line-height: 1em;
         margin-bottom: 4rem;
+
+        @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -43,6 +59,11 @@ export const IoAboutTextContainer = styled.div`
       width: 50%;
       align-self: center;
       margin-bottom: 2rem;
+
+      @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+        font-size: 1rem;
+        width: 100%;
+      }
     }
 
     .love-text-content {
@@ -72,34 +93,33 @@ export const IoAboutTextContainer = styled.div`
         font-weight: 700;
         line-height: 1em;
         margin-bottom: 4rem;
+
+        @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+          font-size: 2rem;
+        }
       }
     }
   }
 
   &.head-text {
     position: relative;
-    height: 100vh;
+    height: 100%;
+    padding: 100px 0 0;
+    margin: 75px auto 0;
 
-    .raster-container {
-      position: relative;
-      z-index: -1;
-      width: calc(91.66667vw + 1px);
-      left: -2.5rem;
+    .head-text-container {
+      opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+      transition: opacity 500ms ease
+        ${({ isVisible }) => (isVisible ? '1.2s' : '0s')};
+      will-change: opacity;
 
-      @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
-        left: -1.5rem;
+      .portrait-container {
+        margin: 0 auto;
+        width: 65%;
       }
     }
-    .raster-v-container {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
+
     .raster-line-v {
-      width: 1px;
-      display: inline-block;
-      height: 100%;
-      margin-right: calc(2.08333vw - 1px);
       transform: ${({ isVisible }) =>
         isVisible
           ? 'matrix(1, 0, 0, 1, 0, 0) scale(1, 1)'
@@ -108,9 +128,6 @@ export const IoAboutTextContainer = styled.div`
       will-change: transform;
     }
     .raster-line-h {
-      width: 100%;
-      height: 1px;
-      margin-bottom: calc(2.08333vw - 1px);
       transform: ${({ isVisible }) =>
         isVisible
           ? 'matrix(1, 0, 0, 1, 0, 0) scale(1, 1)'
@@ -118,71 +135,23 @@ export const IoAboutTextContainer = styled.div`
       transition: transform 0.75s ease-in-out;
       will-change: transform;
     }
-    .raster-line-h,
-    .raster-line-v {
-      position: relative;
-      background-color: ${accent};
-      opacity: 1;
+  }
+
+  &.intro-text {
+    width: 50%;
+    margin: 0 auto;
+    padding: 50px 0;
+    opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+    transition: opacity 500ms ease 0s;
+    will-change: opacity;
+
+    @media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
+      width: 65%;
     }
 
-    .raster-line-v:last-of-type {
-      margin-right: -1px;
-    }
-    .raster-line-h:last-of-type {
-      margin-bottom: -1px;
-    }
-
-    ${rasterStaggers}
-
-    .head-text-container {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-around;
-
-      .portrait-container {
-        flex-basis: 40%;
-        height: 800px;
-        overflow: hidden;
-        opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-        transition: opacity 500ms ease
-          ${({ isVisible }) => (isVisible ? '1.2s' : '0s')};
-        will-change: opacity;
-
-        figure {
-          width: 1200px;
-        }
-
-        img {
-          width: 1200px;
-          transform: scale(1) translateX(-25%);
-          transition: transform 500ms ease 0s, opacity 500ms ease 0s !important;
-          cursor: grab;
-
-          &:hover {
-            transform: scale(1.035) translateX(-25%);
-            transform-origin: center;
-            transition: transform 500ms ease 0s, opacity 500ms ease 0s !important;
-          }
-        }
-      }
-      .raster-text {
-        flex-basis: 50%;
-        padding-top: 75px;
-        opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-        transition: opacity 500ms ease
-          ${({ isVisible }) => (isVisible ? '1.4s' : '0s')};
-        will-change: opacity;
-
-        p {
-          font-size: 1.5rem;
-          text-align: justify;
-        }
-      }
+    p {
+      font-size: 1.5rem;
+      text-align: justify;
     }
   }
 `

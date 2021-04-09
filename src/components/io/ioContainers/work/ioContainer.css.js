@@ -10,6 +10,9 @@ export const IoWorkTextContainer = styled.div`
     > span {
       color: ${accent};
     }
+    @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+      white-space: normal;
+    }
   }
 
   .text {
@@ -23,7 +26,6 @@ export const IoWorkTextContainer = styled.div`
     place-content: center flex-start;
 
     .title {
-      margin-top: 150px;
     }
 
     .work-slider {
@@ -37,8 +39,24 @@ export const IoWorkTextContainer = styled.div`
     justify-content: space-between;
     width 90%;
     margin: 0 auto 100px;
+
+    @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+      display: block;
+
+    .sub-title span {
+      -webkit-text-stroke: 1px #26232f !important;
+      font-size: 2.5rem;
+    }
+    }
+
     .title {
       margin-bottom: 50px;
+
+      @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+        span {
+          font-size: 1.5rem!important;
+        }
+      }
     }
 
     .left {
@@ -58,9 +76,18 @@ export const IoWorkTextContainer = styled.div`
       padding-top: 25px;
       padding-bottom: 100px;
       border-top: 2px solid ${accent};
+
+      @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+        display: block;
+      }
+
       .number {
         flex: 0 0 10%;
         > span { color: ${accent}; }
+
+        @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+          margin-bottom: 1rem;
+        }
       }
       .list-title  {
         &:hover {

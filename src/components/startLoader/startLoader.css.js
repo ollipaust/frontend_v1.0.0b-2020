@@ -5,7 +5,7 @@ export const LoaderContainer = styled.div.withConfig({
   displayName: 'LoaderContainer',
 })`
   position: absolute;
-  z-index: 100000;
+  z-index: 1000000;
   display: flex;
   place-items: center;
   width: 100%;

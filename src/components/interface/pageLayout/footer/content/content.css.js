@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { light33, light } from 'constants/colors'
+import { light66, light } from 'constants/colors'
 
 export const Container = styled.div.withConfig({
   displayName: 'FooterContent',
@@ -8,8 +8,13 @@ export const Container = styled.div.withConfig({
   padding: 5vmin 0;
   z-index: 1;
 
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+    padding: 10vmin 0;
+  }
+
   .bottomLinks {
     line-height: 1rem;
+    text-align: center;
     li {
       list-style: none;
       display: inline-block;
@@ -24,7 +29,7 @@ export const Container = styled.div.withConfig({
         color: ${light};
         transition: color 300ms ease;
         :hover {
-          color: ${light33};
+          color: ${light66};
           transition: color 300ms ease;
         }
       }
@@ -46,14 +51,17 @@ export const ContentText = styled.div.withConfig({
   font-weight: 700;
   ${MEDIA.PHONE &&
     MEDIA.TABLET`
+      height: 40vh;
       text-align: center;
       font-size: 3.5vmax;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
       `}
   span {
     display: block;
+    text-align: center;
+
     ${MEDIA.PHONE &&
       MEDIA.TABLET`
           margin-bottom: 2vh;
@@ -66,7 +74,7 @@ export const ContentText = styled.div.withConfig({
     }
   }
   a {
-    color: ${light33};
+    color: ${light66};
     transition: color 500ms ease 0ms;
 
     :hover {

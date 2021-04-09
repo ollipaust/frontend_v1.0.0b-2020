@@ -1,25 +1,17 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, light, textDark } from 'constants/colors'
+import { light } from 'constants/colors'
 
 export const ContainerDark = styled.figure.withConfig({
   displayName: 'LogoDark',
 })`
-  z-index: 100;
   pointer-events: all;
 
   svg {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     transform: scale(1) translateZ(0);
     transition: transform 300ms ease 50ms;
-
-    .a {
-      fill: ${textDark};
-    }
-    .b {
-      fill: ${accent};
-    }
 
     :hover {
       transform: scale(1.025);
@@ -33,76 +25,48 @@ export const ContainerDark = styled.figure.withConfig({
       left: 1.25em;
       
         svg {
-          width: 48px;
-          height: 48px;
+          width: 40px;
+          height: 40px;
+          overflow: visible;
         }
   `}
+`
+export const SiteName = styled.span.withConfig({
+  displayName: 'SiteName',
+})`
+  position: absolute;
+  right: calc(2.5rem + 40px + 1rem);
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+
+  span {
+    font-family: Campton;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  ${MEDIA.PHONE`
+   display: none;
+    `}
 `
 
 export const ContainerLight = styled.figure.withConfig({
   displayName: 'LogoLight',
 })`
-  z-index: 10000;
   pointer-events: none;
 
   svg {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
     transform: scale(1);
     transition: transform 300ms ease 50ms;
-    .a {
-      fill: ${light};
-    }
-    .b:nth-of-type(5) {
-      fill: ${light};
-      stroke: ${light};
-      stroke-width: 0.9px;
-      transition: all 250ms ease-in 200ms;
-    }
-    .b:nth-of-type(8) {
-      fill: ${light};
-      stroke: ${light};
-      stroke-width: 0.9px;
-      transition: all 250ms ease-in 400ms;
-    }
-    .b:nth-of-type(7) {
-      fill: ${light};
-      stroke: ${light};
-      stroke-width: 0.9px;
-      transition: all 250ms ease-in 600ms;
-    }
-    .b:nth-of-type(6) {
-      fill: ${light};
-      stroke: ${light};
-      stroke-width: 0.9px;
-      transition: all 250ms ease-in 800ms;
-    }
   }
-  :hover svg {
-    .b:nth-of-type(5) {
-      fill: transparent;
-      stroke: ${light};
-      stroke-width: 0.9px;
-      transition: all 250ms ease-in 200ms;
-    }
-    .b:nth-of-type(8) {
-      fill: transparent;
-      stroke: ${light};
-      stroke-width: 0.9px;
-      transition: all 250ms ease-in 400ms;
-    }
-    .b:nth-of-type(7) {
-      fill: transparent;
-      stroke: ${light};
-      stroke-width: 0.9px;
-      transition: all 250ms ease-in 600ms;
-    }
-    .b:nth-of-type(6) {
-      fill: transparent;
-      stroke: ${light};
-      stroke-width: 0.9px;
-      transition: all 250ms ease-in 800ms;
-    }
+
+  [class*='SiteName'] span {
+    color: ${light}!important;
   }
 
   ${MEDIA.PHONE &&
@@ -111,21 +75,9 @@ export const ContainerLight = styled.figure.withConfig({
       left: 1.25em;
 
       svg {
-        width: 48px;
-        height: 48px;
-        transform: scale(1);
-        transition: transform 300ms ease 50ms;
-          .a {
-            fill: ${light};
-          }
-          .b {
-            fill: ${light};
-          }
-      }
-
-      :hover svg {
-        transform: scale(1.05);
-        transition: transform 300ms ease 50ms;
+        width: 40px;
+        height: 40px;
+        overflow: visible;
       }
     `}
 `

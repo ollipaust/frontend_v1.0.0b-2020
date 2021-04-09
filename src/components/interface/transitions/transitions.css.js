@@ -33,11 +33,22 @@ will-change: opacity;
         opacity: 0!important;
     }
 } 
-
 &.exit.exit-active {
     [class*='OverlayBackground'] {
-        transform: translateY(-100%) translateZ(0)!important;
-        transition: transform 400ms ease-in-out 1400ms!important;
+
+        transform: rotate(26deg) translateX(0%) translateY(-22.6%) scale(2);
+
+        .alpha {
+            transform: translateY(-100%);
+            transition: transform 400ms ease-in-out 1400ms!important;
+            will-change: transform;
+          }
+          .beta {
+            transform: translateY(100%);
+            transition: transform 400ms ease-in-out 1400ms!important;
+            will-change: transform;
+          }
+
     }
     [class*='OverlayBoxLeft'] {
         pointer-events: all;
@@ -76,7 +87,7 @@ will-change: opacity;
             top 500ms ease 0ms, 
             left 500ms ease 0ms, 
             transform 500ms  ease 0ms, 
-            background-color 400ms ease 1200ms!important;
+            background-color 400ms ease 1450ms!important;
         }
 
         [class*='MenuLines'] {

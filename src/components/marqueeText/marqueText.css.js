@@ -9,6 +9,10 @@ export const Container = styled.section.withConfig({
   width: 100vw;
   left: -7.5rem;
 
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+    left: -2.5rem;
+  }
+
   h1 {
     display: inline-block !important;
     white-space: nowrap;
@@ -21,6 +25,11 @@ export const Container = styled.section.withConfig({
     color: transparent !important;
     transition: color 500ms ease;
     -webkit-text-stroke: 2px ${darkest} !important;
+
+    @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+      font-size: 3rem;
+      font-weight: 700;
+    }
 
     &:first-of-type {
       margin-left: 0.75rem !important;

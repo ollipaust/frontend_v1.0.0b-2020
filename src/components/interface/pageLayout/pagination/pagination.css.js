@@ -14,6 +14,10 @@ export const Container = styled.section.withConfig({
   width: 100vw;
   height: 30vh;
   overflow-x: hidden;
+
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+    height: 20vh;
+  }
 `
 export const Content = styled.div.withConfig({
   displayName: 'PaginationContent',
@@ -35,7 +39,7 @@ export const Content = styled.div.withConfig({
     -webkit-text-stroke: 3px ${darkest};
     perspective: 35vw;
 
-    @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
+    @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
       -webkit-text-stroke: 1px ${darkest};
     }
 
@@ -65,8 +69,8 @@ export const Content = styled.div.withConfig({
       font-weight: 800 !important;
       margin: 0 2.5vw;
 
-      @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
-        font-size: 1.125rem !important;
+      @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
+        font-size: 2rem !important;
         margin: 0.5rem 3vw;
       }
 
@@ -88,7 +92,8 @@ export const Content = styled.div.withConfig({
       font-size: 3rem;
       font-weight: 700;
       ${MEDIA.PHONE`
-        top: -2.5vw;    
+        font-size: 1.5rem;
+        top: -1em;  
         `}
     }
   }
@@ -102,8 +107,11 @@ export const Content = styled.div.withConfig({
       font-size: 3rem;
       font-weight: 700;
       ${MEDIA.PHONE`
-        top: -2.5vw;    
-        `}
+        font-size: 1.5rem;
+        top: -1em;  
+
+          `}
+    }
     }
   }
 `

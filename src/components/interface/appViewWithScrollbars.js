@@ -13,16 +13,36 @@ const ViewContainer = styled.main.withConfig({
   width: 100%;
   height: 100%;
   opacity: 1;
+  pointer-events: none;
+  filter: blur(0);
+  transition: filter 300ms ease 500ms;
+
+  &.blurred {
+    filter: blur(6px);
+    transition: filter 300ms ease 300ms;
+  }
+
+  section:first-of-type {
+    pointer-events: none;
+
+    .scroll-content {
+      pointer-events: none;
+
+      div:first-of-type {
+        pointer-events: none;
+      }
+    }
+  }
 `
 
 const AppView = ({ children }) => {
   return (
-    <ViewContainer>
+    <ViewContainer id="AppView">
       <Scrollbar
         syncCallbacks={true}
         renderByPixels={true}
         alwaysShowTracks={true}
-        damping={0.075}
+        damping={0.125}
       >
         {children}
       </Scrollbar>

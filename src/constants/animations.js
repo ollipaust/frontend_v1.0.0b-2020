@@ -4,7 +4,7 @@ export const heroSloganAnimation1 = {
   hidden: { opacity: 0, y: '-85%', x: '-50%' },
   show: {
     opacity: 1,
-    y: '-150%',
+    y: '-100%',
     x: '-50%',
     transition: {
       opacity: { duration: 0.5, delay: 1 },
@@ -16,7 +16,7 @@ export const heroSloganAnimation2 = {
   hidden: { opacity: 0, y: '0%', x: '-50%' },
   show: {
     opacity: 1,
-    y: '50%',
+    y: '100%',
     x: '-50%',
     transition: {
       opacity: { duration: 0.5, delay: 1 },

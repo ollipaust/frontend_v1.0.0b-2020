@@ -8,6 +8,9 @@ import {
   darkest,
 } from 'constants/colors'
 import '../static/fonts/fontPrimary.css'
+import '@fontsource/montserrat/500.css'
+import '@fontsource/montserrat/600.css'
+import '@fontsource/montserrat/800.css'
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -35,9 +38,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    font-family: Arial, Helvetica, sans-serif;;
+    font-family: Montserrat;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
     font-feature-settings: "liga", "kern";
     background-color: ${light};
     -webkit-font-smoothing: subpixel-antialiased;
@@ -150,7 +153,7 @@ export const GlobalStyles = createGlobalStyle`
   
   }
 
-  @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
     .scrollbar-track-y, .scrollbar-thumb {
       width: 3px!important;
     }

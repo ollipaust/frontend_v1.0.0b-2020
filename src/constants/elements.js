@@ -28,14 +28,13 @@ export const StyledButton = styled(Link).withConfig({
   pointer-events: all;
   transition: color 350ms ease 175ms;
 
-  @media (max-width: 450px) and (max-height: 823px) and (orientation: portrait) {
+  @media (max-height: 812px) and (max-width: 414px) and (orientation: portrait) {
     font-size: 0.75rem;
     padding: 7.5px 12.5px !important;
     display: block !important;
   }
   @media (max-width: 823px) and (max-height: 450px) and (orientation: landscape) {
     font-size: 0.66rem;
-
     padding: 7.5px 12.5px !important;
   }
   
@@ -71,7 +70,7 @@ export const Divider = styled.span.withConfig({
   height: 0.4em;
   width: 10%;
   margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
   background: ${accentGradient150};
   border-radius: 0.25em;
 
@@ -118,75 +117,6 @@ export const absoluteMotionDiv = {
   left: '0',
   width: '100%',
   height: '100%',
-}
-
-export const Raster = () => {
-  return (
-    <div className="raster-container">
-      <div className="raster-v-container">
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-        <div className="raster-line-v"></div>
-      </div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-      <div className="raster-line-h"></div>
-    </div>
-  )
 }
 
 export const wordsList = [

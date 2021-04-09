@@ -11,7 +11,6 @@ import {
   OverlayBoxRight,
   OverlayBoxLeft,
 } from './menu.css'
-import { LogoSvgAnimated } from 'components/logoSvg'
 import Socials from 'components/socials'
 
 class Menu extends PureComponent {
@@ -54,20 +53,21 @@ class Menu extends PureComponent {
           onKeyDown={this.escapeNavbar}
           aria-label="Overlay Menu"
           tabIndex="0"
-          type="button"
+          role="button"
         >
           <MenuLines />
         </MenuButton>
 
-        <OverlayContent className={toggled} role="navigation">
+        <OverlayContent className={toggled} onKeyDown={this.escapeNavbar}>
           <OverlayBg
             className={toggled}
             onClick={this.toggleNavbar}
             onKeyDown={this.escapeNavbar}
-            tabIndex="0"
-          />
+          >
+            <div className={toggled + ' alpha'} />
+            <div className={toggled + ' beta'} />
+          </OverlayBg>
 
-          <LogoSvgAnimated delay={2000} speed={5000} className="animatedLogo" />
           <LogoContainer>
             <LogoLight />
           </LogoContainer>
@@ -78,7 +78,7 @@ class Menu extends PureComponent {
 
           <OverlayBoxLeft>
             <strong>
-              <span>OPCOSTUDIO.COM</span>
+              <span>WWW.OLLIPAUST.DEV</span>
             </strong>
             <span>Personal Website &amp; Portfolio</span>
           </OverlayBoxLeft>

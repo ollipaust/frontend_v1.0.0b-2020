@@ -13,6 +13,7 @@ export const accentGradient150 =
   'linear-gradient(135deg, rgba(128,0,255,1) 0%, rgba(89,0,255,1) 150%)'
 
 export const accentDark = '#24153C'
+export const accentDeep = '#5700cd'
 export const accentThree = '#580dd0'
 export const accentBlue = 'rgba(89,0,255,1)'
 export const darkest = '#26232f'
@@ -21,6 +22,8 @@ export const neutral = 'hsla(275, 5%, 54%, 1)'
 export const black = '#000000'
 export const white = '#ffffff'
 export const darken = 'rgba(0, 0, 0, 0.33)'
+export const darkBlue = '#151559'
+export const pink = '#ff00ff'
 
 export const alter = 'hsla(49, 100%, 75%, 1)'
 export const alter33 = 'hsla(49, 100%, 75%, 0.33)'
@@ -35,6 +38,9 @@ export const dark50 = 'hsla(255, 15%, 16%, 0.75)'
 export const dark66 = 'hsla(255, 15%, 16%, 0.66)'
 export const dark75 = 'hsla(255, 15%, 16%, 0.75)'
 export const dark90 = 'hsla(255, 15%, 16%, 0.90)'
+export const dark99 = 'hsla(255, 15%, 16%, 0.99)'
+
+export const darkBlue99 = 'rgba(21, 21, 89, 0.99)'
 
 export const light = '#fcfaff'
 export const light33 = 'hsla(270, 100%, 99%, 0.33)'

@@ -4,6 +4,7 @@ import Div100vh from 'react-div-100vh'
 import {
   light,
   accentGradient150,
+  accent,
   light33,
   light90,
   alter50,
@@ -11,8 +12,10 @@ import {
 } from 'constants/colors'
 import MEDIA from 'helpers/mediaTemplates'
 
-const OverlayContainer = ({ className, children }) => (
-  <Div100vh className={className}>{children}</Div100vh>
+const OverlayContainer = ({ className, children, onKeyDown }) => (
+  <Div100vh className={className} onKeyDown={onKeyDown}>
+    {children}
+  </Div100vh>
 )
 
 export const OverlayContent = styled(OverlayContainer).withConfig({
@@ -20,6 +23,7 @@ export const OverlayContent = styled(OverlayContainer).withConfig({
 })`
   background: transparent;
   position: fixed;
+  z-index: 10;
   top: 0;
   right: 0;
   bottom: 0;
@@ -27,70 +31,40 @@ export const OverlayContent = styled(OverlayContainer).withConfig({
   width: 100vw;
   display: flex;
   pointer-events: none;
-  z-index: 1000;
   will-change: transform, opacity;
 
-  [class*='LogoSvgAnimated'] {
-    position: absolute;
-    z-index: 10000;
-    opacity: 0.66;
-    width: calc(50% - 5em);
-    top: 50%;
-    transform: translateY(-50%);
-    left: 12.5%;
-    pointer-events: none;
-
-    @media (max-width: 1366px) and (max-height: 1024px) and (orientation: landscape) {
-      width: 37.5%;
-      left: 7.5em;
-    }
-    @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
-      display: none;
-    }
-
-    span.animatedLogo {
-      opacity: 0 !important;
-      transition: opacity 500ms ease 1000ms;
-      svg {
-        stroke: ${light33};
-        stroke-width: 2px;
-        fill: none;
-        transition: stroke 500ms ease-out 500ms;
-      }
-    }
-  }
   &.inactive {
     [class*='LogoLight'] {
       pointer-events: none;
       opacity: 0;
-      transition: opacity 375ms ease 1075ms;
+      transition: opacity 375ms ease 950ms;
     }
-    [class*='LogoSvgAnimated'] {
-      span.animatedLogo {
-        opacity: 0 !important;
-        transition: opacity 375ms ease 500ms;
-      }
+    [class*='MenuButton'] {
+      margin-left: 2.5rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 375ms ease 950ms;
     }
   }
 
   &.active {
-    z-index: 1000;
-    pointer-events: all;
-
     nav a {
       pointer-events: all;
     }
 
     [class*='OverlayBackground'] {
-      transform: translate3d(0px, 0%, 0px);
-      transition: transform 400ms ease 150ms;
-      will-change: transform;
-    }
+      pointer-events: all;
+      transform: rotate(-26deg) translateX(0%) translateY(-22.6%) scale(2);
 
-    [class*='LogoSvgAnimated'] {
-      span.animatedLogo {
-        opacity: 1 !important;
-        transition: opacity 500ms ease 700ms;
+      .alpha {
+        transform: translateY(0%);
+        transition: transform 400ms ease 150ms;
+        will-change: transform;
+      }
+      .beta {
+        transform: translateY(0%);
+        transition: transform 400ms ease 150ms;
+        will-change: transform;
       }
     }
     [class*='OverlayBoxLeft'] {
@@ -130,6 +104,7 @@ export const OverlayContent = styled(OverlayContainer).withConfig({
       transition: opacity 500ms ease 150ms;
     }
     [class*='MenuButton'] {
+      margin-left: 2.5rem;
       pointer-events: all;
       opacity: 1;
       transition: opacity 500ms ease 150ms;
@@ -166,22 +141,38 @@ export const OverlayBg = styled.div.withConfig({
   displayName: 'OverlayBackground',
 })`
   position: relative;
-  z-index: 1000;
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   overflow: hidden;
   opacity: 0.97;
   outline: 0;
-  background: ${accentGradient150};
   background-size: cover;
   background-position: center;
-  transform: translate3d(0px, -100%, 0px);
-  transition: transform 375ms ease-in-out 875ms;
+  pointer-events: none;
+  transform: rotate(26deg) translateX(0%) translateY(-22.6%) scale(2);
+
+  .alpha {
+    background: ${accent};
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition: transform 375ms ease-in-out 875ms;
+  }
+  .beta {
+    background: ${accent};
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    transform: translateY(100%);
+    transition: transform 375ms ease-in-out 875ms;
+  }
 `
 
 export const MenuButton = styled.button.withConfig({
   displayName: 'MenuButton',
 })`
+  z-index: 10;
   height: 48px;
   width: 48px;
   font-size: 12px;
@@ -190,7 +181,6 @@ export const MenuButton = styled.button.withConfig({
   user-select: none;
   border: none;
   outline: none;
-  z-index: 10000;
   margin-top: -0.5rem;
   border-width: initial;
   border-style: none;
@@ -292,7 +282,6 @@ export const OverlayNav = styled.nav.withConfig({
   right: 12.5%;
   opacity: 1;
   transition: opacity 1s;
-  z-index: 10000;
   pointer-events: none;
 
   @media (max-height: 1366px) and (max-width: 1024px) and (orientation: portrait) {
@@ -330,39 +319,6 @@ export const OverlayNav = styled.nav.withConfig({
     }
   }
 `
-
-export const OverlaySvg = styled.div.withConfig({
-  displayName: 'OverlaySvg',
-})`
-position: absolute;
-z-index: 10000;
-width: 50vw;
-top: 0;
-left: 0;
-pointer-events: none;
-
-  span.animatedLogo {
-    opacity: 0!important;
-    transition: opacity 500ms ease 100ms;
-      svg {
-        stroke: ${light33};
-        stroke-width: 2px
-        fill: none;
-        transition: stroke 500ms ease-out 500ms;
-      }
-  }
-
-${MEDIA.PHONE &&
-  MEDIA.TABLET`
-  position: absolute;
-  z-index: 10000;
-  width: 100%;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-`}
-
-`
 export const LogoContainer = styled.div.withConfig({
   displayName: 'LogoContainer',
 })`
@@ -373,7 +329,6 @@ export const LogoContainer = styled.div.withConfig({
   top: 0;
   left: 0;
   height: calc(100px + 2.5em);
-  z-index: 10000;
   width: 100%;
   pointer-events: none;
 
@@ -391,14 +346,13 @@ export const LogoContainer = styled.div.withConfig({
 export const OverlayBoxLeft = styled.div.withConfig({
   displayName: 'OverlayBoxLeft',
 })`
-  font-family: Arial, Helvetica, sans-serif;;
+  font-family: Montserrat;
   font-size: 1rem;
   line-height: normal;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   position: absolute;
-  z-index: 10000;
   bottom: 2.5em;
   left: 2.5em;
   color: ${light};
@@ -445,7 +399,6 @@ export const OverlayBoxRight = styled.div.withConfig({
   justify-content: space-between;
   flex-direction: column;
   position: absolute;
-  z-index: 10000;
   bottom: 2.5em;
   right: 2.5em;
   color: ${light};

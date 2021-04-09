@@ -7,7 +7,7 @@ was involved. Because we wanted to promote certain personal aspects.
 <p className="text">
 This happened to me in my journey in IT and I feel that it&apos;s
 important to reconnect with my &quot;why I do this&quot; and &quot;why I
-started&quot;. I started creating websites when I was a kid. I learned
+started&quot;. I started creating web&shy;sites when I was a kid. I learned
 coding through Forum-Softwares like MyBB in order to build a
 board-system for my online gaming friends (guild) and ended up building
 and hosting a forum with almost 5k users with topics ranging from games,

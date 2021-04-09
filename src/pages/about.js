@@ -6,7 +6,8 @@ import Head from 'components/head'
 import PageLayout from 'components/interface/pageLayout'
 import Title from 'components/title'
 import IoAboutContainer from 'components/io/ioContainers/about/ioContainer'
-import { Raster, Divider } from 'constants/elements'
+import { Divider } from 'constants/elements'
+import Raster from 'components/raster'
 import Marquee from 'components/marqueeText'
 import Image from 'components/image'
 
@@ -17,42 +18,23 @@ const About = ({ data }) => (
     <IoAboutContainer className="head-text">
       <div className="head-text-container">
         <Image items={data.aboutJson.portrait} className="portrait-container" />
-
-        <div className="raster-text">
-          <Title as="h1" size="super" className="title">
-            {data.aboutJson.headtitle}
-          </Title>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.aboutJson.introtext.childMarkdownRemark.html,
-            }}
-          />
-        </div>
       </div>
       <Raster />
     </IoAboutContainer>
 
-    <IoAboutContainer className="aqua-text flexbox">
-      <Title as="h3" size="larger" className="textCenter title">
-        {data.aboutJson.aquatexttitle}
-      </Title>
-      <div
-        className="quote"
-        dangerouslySetInnerHTML={{
-          __html: data.aboutJson.aquatext.childMarkdownRemark.html,
-        }}
-      />
-      <Title as="p" size="small" className="textCenter source">
-        Source:{' '}
-        <a
-          href="https://blog.prepscholar.com/aquarius-traits-personality"
-          target="_blank"
-          title="Quote source"
-          rel="noreferrer noopener"
-        >
-          https://blog.prepscholar.com/aquarius-traits-personality
-        </a>
-      </Title>
+    <IoAboutContainer className="intro-text">
+      <div className="intro-text-container">
+        <Title as="h1" size="super" className="title">
+          {data.aboutJson.headtitle}
+        </Title>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.aboutJson.introtext.childMarkdownRemark.html,
+          }}
+        />
+      </div>
+
+      <Raster />
     </IoAboutContainer>
 
     <IoAboutContainer className="love-text flexbox">

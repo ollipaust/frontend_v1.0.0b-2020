@@ -6,9 +6,9 @@ export const Container = styled.header.withConfig({
   width: 100%;
   height: calc(100px + 2.5em);
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
-  z-index: 1000;
   pointer-events: none;
 
   @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {

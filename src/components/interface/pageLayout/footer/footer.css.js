@@ -13,10 +13,4 @@ export const Container = styled.footer.withConfig({
   color: ${light};
   box-sizing: border-box;
   background-color: ${darkest};
-
-  > .footerWaves {
-    position: absolute;
-    top: -60px;
-    z-index: 0;
-  }
 `

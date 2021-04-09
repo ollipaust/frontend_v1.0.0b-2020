@@ -7,6 +7,11 @@ export const HeroContainer = styled.section.withConfig({
 })`
   position: relative;
   overflow: hidden;
+  pointer-events: none;
+
+  div:first-of-type {
+    pointer-events: none;
+  }
 `
 
 export const HeroTextContainer = styled.div.withConfig({
@@ -25,14 +30,20 @@ export const HeroTextContainer = styled.div.withConfig({
   text-align: center;
   pointer-events: none;
 
-  @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
-    top: -50px;
+  .random-words-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 100px;
+    @media (max-height: 823px) and (max-width: 450px) and (orientation: portrait) {
+      margin-top: 0;
+    }
   }
 
   h1 {
-    width: 50vw;
-    height: calc(50vh - 5rem);
-
     span {
       text-transform: uppercase;
       display: block;
@@ -62,7 +73,7 @@ export const HeroTextContainer = styled.div.withConfig({
 
     .loop {
       ${randomTextFadeIn}
-      transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(0%);
 
       &.inactive {
         opacity: 0;
@@ -77,13 +88,14 @@ export const HeroTextContainer = styled.div.withConfig({
 
   .sub-title-container {
     width: 75%;
+    padding-top: 20px;
 
     [class*='Divider'] {
-      width: 20%;
+      width: 100px;
     }
 
     h2 > span {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Montserrat
       font-weight: 700;
       color: ${dark75};
       display: block;

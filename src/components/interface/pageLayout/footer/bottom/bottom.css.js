@@ -13,6 +13,7 @@ export const ContainerBottom = styled.div.withConfig({
   width: 100%;
   height: 50px;
   background: ${darken};
+
   .copyright {
     color: ${light33};
     font-size: 1em;

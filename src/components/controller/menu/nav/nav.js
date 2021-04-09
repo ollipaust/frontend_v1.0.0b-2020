@@ -1,62 +1,56 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Container, LinkContainer } from './nav.css'
+import { About } from './about/about'
 
 const Nav = () => {
+  const [aboutIsVisible, setAboutIsVisible] = useState(false)
+  const toggled = aboutIsVisible ? 'active' : 'inactive'
+  console.log('is about active: ' + aboutIsVisible)
+
+  useEffect(() => {
+    const handleEsc = event => {
+      if (event.keyCode === 27) {
+        setAboutIsVisible(false)
+      }
+    }
+    window.addEventListener('keydown', handleEsc)
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc)
+    }
+  }, [])
+
   return (
-    <Container>
-      <li>
-        <LinkContainer>
-          <Link
-            to="/about"
-            activeClassName="active"
-            className="about"
-            data-info="01"
-          >
-            <span>About</span>
-          </Link>
-        </LinkContainer>
-      </li>
+    <>
+      <Container>
+        <li>
+          <LinkContainer>
+            <button
+              onClick={() => setAboutIsVisible(true)}
+              className={toggled + ' about'}
+              data-info="01"
+            >
+              <span>About</span>
+            </button>
+          </LinkContainer>
+        </li>
+        <li>
+          <LinkContainer>
+            <button
+              onClick={() => setAboutIsVisible(true)}
+              className={toggled + ' about'}
+              data-info="01"
+            >
+              <span>Work</span>
+            </button>
+          </LinkContainer>
+        </li>
+      </Container>
 
-      <li>
-        <LinkContainer>
-          <Link
-            to="/work"
-            activeClassName="active"
-            className="work"
-            data-info="02"
-          >
-            <span>Work</span>
-          </Link>
-        </LinkContainer>
-      </li>
-
-      <li>
-        <LinkContainer>
-          <Link
-            to="/stack"
-            activeClassName="active"
-            className="stack"
-            data-info="03"
-          >
-            <span>Tech stack</span>
-          </Link>
-        </LinkContainer>
-      </li>
-
-      <li>
-        <LinkContainer>
-          <Link
-            to="/contact"
-            activeClassName="active"
-            className="contact"
-            data-info="04"
-          >
-            <span>Contact</span>
-          </Link>
-        </LinkContainer>
-      </li>
-    </Container>
+      <About className={'AboutContent ' + toggled}>
+        <button onClick={() => setAboutIsVisible(!aboutIsVisible)}>X</button>
+      </About>
+    </>
   )
 }
 

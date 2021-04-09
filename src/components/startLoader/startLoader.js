@@ -38,7 +38,7 @@ class StartLoader extends PureComponent {
           className={
             this.state.startLoading === true ? 'loading' : 'loading-done'
           }
-          strokeWidth="10"
+          strokeWidth="15"
           strokeColor={light}
           fill="none"
         />

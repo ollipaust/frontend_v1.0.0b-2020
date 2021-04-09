@@ -53,7 +53,7 @@ const Work = ({ data }) => (
               rel="noreferrer"
             >
               <Title as="h3" size="large" className="list-title">
-                https://github.com/ollipaust
+                https://github.com/&#8203;ollipaust
               </Title>
             </a>
           </li>

@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-import { light, light33, alter66 } from 'constants/colors'
+import { light, light33, light66 } from 'constants/colors'
 
 export const Container = styled.ul.withConfig({
   displayName: 'NavLinks',
 })`
   list-style: none;
   text-align: right;
-  height: auto;
+  width: auto;
+  height: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -35,7 +36,7 @@ export const Container = styled.ul.withConfig({
       &:last-child {
         margin-bottom: 0;
       }
-      a {
+      button {
         font-size: 6vh !important;
       }
     }
@@ -47,7 +48,7 @@ export const Container = styled.ul.withConfig({
       &:last-child {
         margin-bottom: 0;
       }
-      a {
+      button {
         font-size: 8.125vh !important;
       }
     }
@@ -58,7 +59,7 @@ export const Container = styled.ul.withConfig({
       &:last-child {
         margin-bottom: 0;
       }
-      a {
+      button {
         font-size: 6vw !important;
       }
     }
@@ -69,7 +70,7 @@ export const Container = styled.ul.withConfig({
       &:last-child {
         margin-bottom: 0;
       }
-      a {
+      button {
         font-size: 8.125vw !important;
       }
     }
@@ -88,26 +89,24 @@ export const Container = styled.ul.withConfig({
     }
   }
 
-  li a {
+  li button {
     display: block;
     position: relative;
     font-size: 8.25vw;
     font-weight: 800;
+    background: none;
+    outline: 0;
+    border: none;
     text-transform: uppercase;
     color: transparent;
     transition: color 300ms cubic-bezier(0.165, 0.8, 0.45, 1) 150ms;
     -webkit-text-stroke: 0.02em ${light};
     transform: scale(1, 0.9);
 
-    > span {
+    span {
       font-family: Campton;
     }
 
-    :hover {
-      color: ${alter66};
-      transform: scale(1, 0.9);
-      transition: color 500ms cubic-bezier(0.165, 0.8, 0.45, 1) 150ms;
-    }
     :before {
       content: attr(data-info);
       white-space: pre;
@@ -119,6 +118,13 @@ export const Container = styled.ul.withConfig({
       -webkit-text-stroke: 0px;
       color: ${light33};
       pointer-events: none;
+    }
+
+    :hover {
+      color: ${light66};
+      cursor: pointer;
+      transform: scale(1, 0.9);
+      transition: color 500ms cubic-bezier(0.165, 0.8, 0.45, 1) 150ms;
     }
   }
 `
