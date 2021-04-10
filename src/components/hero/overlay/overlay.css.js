@@ -82,6 +82,7 @@ export const NoticeBox = `
   text-align: right;
   font-size: 0.75rem;
   color: ${textDark};
+  pointer-events: all;
 
   a {
     pointer-events: all;

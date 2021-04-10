@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 
 import { Container, Content, AppControllerWrapper } from './controller.css'
 
@@ -12,18 +12,18 @@ const Controller = () => {
   const [isMenuActive, setIsMenuActive] = useState(false)
   const toggled = isMenuActive ? 'active' : 'inactive'
 
-  const appView =
-    typeof document !== 'undefined' ? document.getElementById('AppView') : null
+  const blurContent =
+    typeof document !== 'undefined'
+      ? document.getElementById('ScrollContent')
+      : null
 
-  function hideStuff() {
-    appView.classList.add('blurred')
+  function addBlur() {
+    blurContent.classList.add('blur')
   }
+
   function hideMenu() {
     setIsMenuActive(!isMenuActive)
-    appView.classList.remove('blurred')
-  }
-  function removeBlur() {
-    appView.classList.remove('blurred')
+    blurContent.classList.remove('blur')
   }
 
   function OverflowHider() {
@@ -37,11 +37,11 @@ const Controller = () => {
   }
 
   useEffect(() => {
-    const appView = document.getElementById('AppView')
+    const blurContent = document.getElementById('blurContent')
     const handleEsc = event => {
       if (event.keyCode === 27) {
         setIsMenuActive(false)
-        appView.classList.remove('blurred')
+        blurContent.classList.remove('blur')
       }
     }
     window.addEventListener('keydown', handleEsc)
@@ -54,12 +54,12 @@ const Controller = () => {
   return (
     <AppControllerWrapper>
       {typeof document !== 'undefined' ? OverflowHider() : null}
-      {isMenuActive ? hideStuff() : null}
-      <NavLinks className={toggled} />
+      {isMenuActive ? addBlur() : null}
+      <NavLinks className={toggled} setIsMenuActive={setIsMenuActive} />
       <Container>
         <Content>
           <MenuButton className={toggled} onClick={() => hideMenu()} />
-          <Logo className={toggled} />
+          <Logo className={toggled} setIsMenuActive={setIsMenuActive} />
         </Content>
       </Container>
 

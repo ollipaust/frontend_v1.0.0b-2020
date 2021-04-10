@@ -6,9 +6,9 @@ import { Container, SiteName } from './logo.css'
 
 import { accent, darkBlue, pink } from 'constants/colors'
 
-const Logo = ({ className }) => (
+const Logo = ({ className, setIsMenuActive }) => (
   <Container>
-    <Link to="/">
+    <Link to="/" onClick={() => setIsMenuActive(false)}>
       <SiteName className={className}>
         <span>Olli Paust</span>
       </SiteName>

@@ -110,6 +110,10 @@ export default class IO extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.io.disconnect()
+  }
+
   render() {
     const { isVisible, hasBeenVisible } = this.state
 

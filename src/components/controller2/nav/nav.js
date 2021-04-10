@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react'
+import { Link } from 'gatsby'
 import { Container, Nav, NavLinksAboutContainer } from './nav.css'
 import { AboutContent } from './about'
 
-const NavLinks = ({ className }) => {
+const NavLinks = ({ className, setIsMenuActive }) => {
   const [isAboutActive, setIsAboutActive] = useState(false)
 
   const collapsed = isAboutActive ? 'active' : 'inactive'
@@ -14,12 +15,12 @@ const NavLinks = ({ className }) => {
 
   function hideStuff() {
     menuBtn.classList.add('deactivated')
-    navList.classList.add('blurred')
+    navList.classList.add('blur')
   }
   function hideAbout() {
     setIsAboutActive(!isAboutActive)
     menuBtn.classList.remove('deactivated')
-    navList.classList.remove('blurred')
+    navList.classList.remove('blur')
   }
 
   useEffect(() => {
@@ -69,18 +70,21 @@ const NavLinks = ({ className }) => {
           <button
             className="work"
             data-info="02"
+            onClick={() => setIsMenuActive(false)}
             style={isAboutActive === true ? { pointerEvents: 'none' } : null}
           >
-            <span>Work</span>
+            <Link to="/work">
+              <span>Work</span>
+            </Link>
           </button>
         </li>
         <li>
           <button
-            className="stack"
+            className="blog"
             data-info="03"
             style={isAboutActive === true ? { pointerEvents: 'none' } : null}
           >
-            <span>Stack</span>
+            <span>Blog</span>
           </button>
         </li>
         <li>

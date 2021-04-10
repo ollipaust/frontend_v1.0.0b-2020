@@ -13,7 +13,7 @@ export const accentGradient150 =
   'linear-gradient(135deg, rgba(128,0,255,1) 0%, rgba(89,0,255,1) 150%)'
 
 export const accentDark = '#24153C'
-export const accentDeep = '#5700cd'
+export const accentDeep = '#4901b8'
 export const accentThree = '#580dd0'
 export const accentBlue = 'rgba(89,0,255,1)'
 export const darkest = '#26232f'

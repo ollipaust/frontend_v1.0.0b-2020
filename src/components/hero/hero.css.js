@@ -89,7 +89,8 @@ export const HeroTextContainer = styled.div.withConfig({
   .sub-title-container {
     width: 75%;
     padding-top: 20px;
-
+    pointer-events: all;
+    
     [class*='Divider'] {
       width: 100px;
     }

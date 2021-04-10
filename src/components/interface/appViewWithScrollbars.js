@@ -14,16 +14,16 @@ const ViewContainer = styled.main.withConfig({
   height: 100%;
   opacity: 1;
   pointer-events: none;
-  filter: blur(0);
-  transition: filter 300ms ease 750ms;
 
-  &.blurred {
-    filter: blur(6px);
-    transition: filter 300ms ease 850ms;
-  }
-
-  section:first-of-type {
+  section#ScrollContent {
     pointer-events: none;
+    filter: blur(0);
+    transition: filter 300ms ease 750ms;
+
+    &.blur {
+      filter: blur(6px);
+      transition: filter 300ms ease 850ms !important;
+    }
 
     .scroll-content {
       pointer-events: none;
@@ -43,6 +43,7 @@ const AppView = ({ children }) => {
         renderByPixels={true}
         alwaysShowTracks={true}
         damping={0.125}
+        id="ScrollContent"
       >
         {children}
       </Scrollbar>

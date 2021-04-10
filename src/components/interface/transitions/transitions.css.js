@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import { dark75 } from 'constants/colors'
 import MEDIA from 'helpers/mediaTemplates'
 
 export const TransitionStyles = createGlobalStyle`
@@ -17,7 +16,7 @@ will-change: opacity;
     }
     &.enter-done {
         opacity: 1;
-        transition: opacity 300ms ease 0ms;
+        transition: opacity 300ms ease 500ms;
     }
     &.exit {
         opacity: 0;
@@ -28,7 +27,7 @@ will-change: opacity;
 
 &.enter.enter-active {
     [class*='MenuButton'],
-    [class*='LogoDark'], 
+    [class*='AppLogo'], 
     [class*='LangSwitchContainer']  {
         opacity: 0!important;
     }
@@ -50,13 +49,13 @@ will-change: opacity;
           }
 
     }
-    [class*='OverlayBoxLeft'] {
+    [class*='MenuBoxLeft'] {
         pointer-events: all;
         opacity: 0;
         transform: translateY(-50%) translateZ(0);
         transition: all 500ms ease-in 0ms;
       }
-      [class*='OverlayBoxRight'] {
+      [class*='MenuBoxRight'] {
         pointer-events: all;
         opacity: 0;
         transform: translateY(-50%) translateZ(0);
@@ -66,10 +65,7 @@ will-change: opacity;
         opacity: 0!important;
         transition: opacity 500ms ease 500ms!important;
     }
-    [class*='LogoLight'] {
-        opacity: 0!important;
-        transition: opacity 400ms ease 1450ms!important;
-    }
+
     [class*='MenuButton'] {
 
         ${MEDIA.PHONE &&
@@ -81,13 +77,12 @@ will-change: opacity;
         span,
         span:after,
         span:before {
-            background-color: ${dark75};
             transform: rotate(0) translateZ(0) scale(1)!important;
             transition: 
             top 500ms ease 0ms, 
             left 500ms ease 0ms, 
             transform 500ms  ease 0ms, 
-            background-color 400ms ease 1450ms!important;
+            background-color 500ms ease 750ms!important;
         }
 
         [class*='MenuLines'] {

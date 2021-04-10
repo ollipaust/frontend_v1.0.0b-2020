@@ -15,8 +15,6 @@ const PageLayout = ({ children, prev, next, bodyClass }) => {
       <PageContent>{children}</PageContent>
 
       <Pagination prev={prev} next={next} />
-
-      <Footer />
     </React.Fragment>
   )
 }

@@ -23,14 +23,14 @@ export const NavLinksAboutContainer = styled.div.withConfig({
   background: black;
 
   &.active {
-    opacity: 0.9;
+    opacity: 0.85;
     transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 250ms;
     pointer-events: all !important;
   }
 
   &.inactive {
     opacity: 0;
-    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 250ms;
+    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     pointer-events: none !important;
   }
 
@@ -42,11 +42,11 @@ export const NavLinksAboutContainer = styled.div.withConfig({
     width: 50px;
     height: 50px;
     opacity: 0;
-    transition: opacity 0ms ease 0ms;
+    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
 
     &.active {
       opacity: 1;
-      transition: opacity 500ms ease 0ms;
+      transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1) 250ms;
     }
   }
 `
@@ -68,7 +68,7 @@ export const Nav = styled.ul.withConfig({
   filter: blur(0px);
   transition: filter 500ms ease;
 
-  &.blurred {
+  &.blur {
     filter: blur(5px);
     transition: filter 500ms ease;
   }
@@ -163,6 +163,10 @@ export const Nav = styled.ul.withConfig({
     transition: color 300ms cubic-bezier(0.165, 0.8, 0.45, 1) 150ms;
     -webkit-text-stroke: 0.02em ${light};
     transform: scale(1, 0.9);
+
+    a {
+      color: transparent;
+    }
 
     span {
       font-family: Campton;

@@ -9,7 +9,7 @@ export const Container = styled.div.withConfig({
   width: 100vw;
   height: 200vh;
   overflow: hidden;
-  opacity: 0.875;
+  opacity: 0.8;
   outline: 0;
   background-size: cover;
   background-position: center;
@@ -19,6 +19,7 @@ export const Container = styled.div.withConfig({
 
   .alpha {
     background: ${accentDeep};
+    filter: saturate(1.5);
     width: 100vw;
     height: 100vh;
     pointer-events: none;
@@ -27,6 +28,7 @@ export const Container = styled.div.withConfig({
   }
   .beta {
     background: ${accentDeep};
+    filter: saturate(1.5);
     width: 100vw;
     height: 100vh;
     pointer-events: none;

@@ -1,12 +1,19 @@
 import styled from 'styled-components'
 import MEDIA from 'helpers/mediaTemplates'
-import { accent, darkBlue, pink, light, textDark } from 'constants/colors'
+import { accent, darkBlue, light, textDark } from 'constants/colors'
 
 export const Container = styled.figure.withConfig({
   displayName: 'AppLogo',
 })`
   position: relative;
   pointer-events: all;
+  transform: scale(1) translateZ(0);
+  transition: transform 300ms ease 50ms;
+
+  :hover {
+    transform: scale(1.025);
+    transition: transform 300ms ease 50ms;
+  }
 
   svg {
     fill: ${accent};
@@ -20,31 +27,13 @@ export const Container = styled.figure.withConfig({
       transition: stop-color 500ms ease 950ms;
     }
     #b stop {
-      stop-color: ${pink};
+      stop-color: ${light};
       transition: stop-color 500ms ease 950ms;
-    }
-
-    :hover {
-      transform: scale(1.025);
-      transition: transform 300ms ease 50ms;
     }
 
     &.active {
       fill: ${light}!important;
       transition: fill 500ms ease 950ms;
-
-      #a stop {
-        stop-color: ${darkBlue}!important;
-        transition: stop-color 500ms ease 950ms;
-      }
-      #b stop:nth-of-type(1) {
-        stop-color: ${light}!important;
-        transition: stop-color 500ms ease 950ms;
-      }
-      #b stop:nth-of-type(2) {
-        stop-color: ${darkBlue}!important;
-        transition: stop-color 500ms ease 950ms;
-      }
     }
   }
 
